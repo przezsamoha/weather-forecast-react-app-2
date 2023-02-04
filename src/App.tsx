@@ -13,7 +13,7 @@ function App() {
   } = useForecast();
 
   return (
-    <div className="flex justify-center items-center h-[100vh] w-full">
+    <div className=" flex justify-center items-center h-[100vh] w-full">
       {forecast ? (
         <Forecast data={forecast} />
       ) : (
