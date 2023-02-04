@@ -7,7 +7,7 @@ interface SearchProps {
   listOfCities: [];
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSelectedCity: (city: CityProps) => void;
-  handleResetButton: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  handleReset: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 function Search({
@@ -15,7 +15,7 @@ function Search({
   listOfCities,
   handleInputChange,
   handleSelectedCity,
-  handleResetButton,
+  handleReset,
 }: SearchProps) {
   return (
     <section className="w-full md:max-w-[700px] p-4 flex flex-col text-center items-center justify-center md:px-10 lg:p-24 h-full lg:h-[700px] ">
@@ -50,7 +50,7 @@ function Search({
         </label>
 
         {city && (
-          <button onClick={handleResetButton}>
+          <button onClick={handleReset}>
             <span className="absolute inset-y-0 flex items-center pl-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -8,8 +8,8 @@ function App() {
     listOfCities,
     forecast,
     handleInputChange,
-    handleResetButton,
     handleSelectedCity,
+    handleReset,
   } = useForecast();
 
   return (
@@ -22,7 +22,7 @@ function App() {
           listOfCities={listOfCities}
           handleInputChange={handleInputChange}
           handleSelectedCity={handleSelectedCity}
-          handleResetButton={handleResetButton}
+          handleReset={handleReset}
         />
       )}
     </div>
