@@ -1,4 +1,8 @@
 import { ForecastProps } from '../types';
+import Sunrise from './Icons/Sunrise';
+import Sunset from './Icons/Sunset';
+import Tile from './Tile';
+import moment from 'moment';
 
 interface Props {
   data: ForecastProps;
@@ -16,6 +20,25 @@ function Degree({ temp }: DegreeProps) {
     </span>
   );
 }
+
+const getHourAndMinutes = (timestamp: number): string => {
+  const date = new Date(timestamp * 1000);
+  let hours = date.getHours().toString();
+  let minutes = date.getMinutes().toString();
+
+  if (hours.length <= 1) hours = `0${hours}`;
+  if (minutes.length <= 1) minutes = `0${minutes}`;
+
+  return `${hours}:${minutes}`;
+};
+const getHourNoMinutes = (timestamp: number): string => {
+  const date = new Date(timestamp * 1000);
+  let hours = date.getHours().toString();
+
+  if (hours.length <= 1) hours = `0${hours}`;
+
+  return `${hours}`;
+};
 
 // weather icon url: 'http://openweathermap.org/img/w/10d.png';
 
@@ -40,41 +63,61 @@ function Forecast({ data }: Props) {
           </p>
         </section>
 
-        <section className="flex overflow-x-scroll mt-4 pb-2 mb-5">
-          {data.list.map((item, i) => (
-            <div className="inline-block w-[50px] flex-shrink-0" key={i}>
-              {/* TO FUTURE SELF: the below works to get hour from datetime */}
-              <p className="text-xs text-neutral-400">
-                {i === 0 ? 'Now' : new Date(item.dt * 1000).getHours()}
-              </p>
-              <img
-                alt={`weather-icon-${item.weather[0].description}`}
-                src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
-              />
-              <p className="text-sm font-medium pb-2">
-                <Degree temp={Math.round(item.main.temp)} />
-              </p>
-            </div>
-          ))}
+        <section className="flex overflow-x-scroll mt-4 pb-2">
+          {data.list.map((item, i) => {
+            return (
+              <div className="inline-block w-[50px] flex-shrink-0" key={i}>
+                {/* TO FUTURE SELF: the below works to get hour from datetime */}
+                <p className="text-xs text-neutral-400">
+                  {!i ? 'Now' : getHourNoMinutes(item.dt)}
+                </p>
+                <img
+                  alt={`weather-icon-${item.weather[0].description}`}
+                  src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
+                />
+                <p className="text-sm font-medium pb-2">
+                  <Degree temp={Math.round(item.main.temp)} />
+                </p>
+              </div>
+            );
+          })}
         </section>
-        <section className="grid grid-cols-2 gap-5">
+
+        <section className=" h-24 grid grid-cols-2 gap-5">
+          <div className="flex flex-col text-sm  text-neutral-500 space-y-2 items-center justify-center">
+            <Sunrise />
+            <div>{getHourAndMinutes(data.sunrise)}</div>
+          </div>
+          <div className="flex flex-col text-sm text-neutral-500 space-y-2 items-center justify-center">
+            <Sunset />
+            <div>{getHourAndMinutes(data.sunset)}</div>
+          </div>
+        </section>
+
+        <section className="h-64 grid grid-cols-2 gap-5">
           <div>
-            <h1 className="flex text-2xl border rounded-md h-[140px] items-center text-center "></h1>
+            <Tile />
           </div>
           <div>
-            <h1 className="flex text-2xl border rounded-md h-[140px] items-center text-center "></h1>
+            <Tile />
           </div>
           <div>
-            <h1 className="flex text-2xl border rounded-md h-[140px] items-center text-center "></h1>
+            <Tile />
           </div>
           <div>
-            <h1 className="flex text-2xl border rounded-md h-[140px] items-center text-center "></h1>
+            <Tile />
           </div>
           <div>
-            <h1 className="flex text-2xl border rounded-md h-[140px] items-center text-center "></h1>
+            <Tile />
           </div>
           <div>
-            <h1 className="flex text-2xl border rounded-md h-[140px] items-center text-center "></h1>
+            <Tile />
+          </div>
+          <div>
+            <Tile />
+          </div>
+          <div>
+            <Tile />
           </div>
         </section>
       </div>

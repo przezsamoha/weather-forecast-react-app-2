@@ -8,8 +8,13 @@ export interface CityProps {
 export interface ForecastProps {
   name: string;
   country: string;
+  timezone: number;
+
   sunrise: number;
   sunset: number;
+
+  // city: {
+  // };
   list: [
     {
       dt: number;

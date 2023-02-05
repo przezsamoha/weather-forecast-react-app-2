@@ -20,11 +20,11 @@ function Search({
   return (
     <section className="w-full md:max-w-[500px] flex flex-col text-center items-center justify-center md:px-10  h-full ">
       <Header />
-      <form
+      <section
         className="relative flex mt-5 md:mt-4 space-x-2"
         onSubmit={(e) => e.preventDefault()}
       >
-        <label className="relative block">
+        <div className="relative block">
           <span className="absolute inset-y-0 ml-2 flex items-center pl-2  fill-neutral-400  focus:fill-neutral-600">
             <svg
               className="w-4 h-4 "
@@ -40,32 +40,33 @@ function Search({
           </span>
 
           <input
-            className="w-full placeholder:text-neutral-400 font-normal text-neutral-400 block border border-neutral-300 rounded-md py-2 pl-9 pr-3 focus:outline-none focus:border-neutral-400 focus:ring-neutral-400 focus:ring-1 focus:text-neutral-400 hover:border-neutral-300 hover:ring-1 hover:ring-neutral-300"
+            className="w-full placeholder:text-neutral-400 font-normal text-neutral-400 block border border-neutral-300 rounded-md py-2 pl-9 pr-20 focus:outline-none focus:border-neutral-400 focus:ring-neutral-400 focus:ring-1 focus:text-neutral-400"
             placeholder="Search for the city..."
             type="text"
             name="search"
             value={city}
             onChange={handleInputChange}
           />
-
-          {city && (
-            <button onClick={handleReset}>
-              <span className="absolute inset-y-0 flex items-center pl-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  className="w-6 h-6 fill-neutral-500"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </span>
-            </button>
-          )}
-        </label>
+        </div>
+        {city && (
+          <button className="absolute inset-y-0 right-2" onClick={handleReset}>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1}
+                className="w-6 h-6 stroke-neutral-300  hover:stroke-neutral-900"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </span>
+          </button>
+        )}
 
         <ul className="absolute mt-10 text-left">
           {listOfCities.map((city: CityProps, index: number) => (
@@ -81,7 +82,7 @@ function Search({
             </li>
           ))}
         </ul>
-      </form>
+      </section>
     </section>
   );
 }
