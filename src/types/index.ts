@@ -13,8 +13,6 @@ export interface ForecastProps {
   sunrise: number;
   sunset: number;
 
-  // city: {
-  // };
   list: [
     {
       dt: number;

@@ -94,31 +94,38 @@ function Forecast({ data }: Props) {
           </div>
         </section>
 
-        <section className="h-64 grid grid-cols-2 gap-5">
-          <div>
-            <Tile />
-          </div>
-          <div>
-            <Tile />
-          </div>
-          <div>
-            <Tile />
-          </div>
-          <div>
-            <Tile />
-          </div>
-          <div>
-            <Tile />
-          </div>
-          <div>
-            <Tile />
-          </div>
-          <div>
-            <Tile />
-          </div>
-          <div>
-            <Tile />
-          </div>
+        <section className="h-[300px] grid grid-cols-2 gap-5 mb-5 overflow-x-scroll">
+          <Tile
+            icon={'wind'}
+            title={'wind'}
+            info={'wind'}
+            description={'wind'}
+          />
+          <Tile
+            icon={'feels'}
+            title={'feels'}
+            info={'feels'}
+            description={'feel'}
+          />
+          <Tile
+            icon={'humidity'}
+            title={'humidity'}
+            info={'humidity'}
+            description={'humidity'}
+          />
+          <Tile
+            icon={'pressure'}
+            title={'pressure'}
+            info={'pressure'}
+            description={'pressure'}
+          />
+          <Tile
+            icon={'visibility'}
+            title={'visibility'}
+            info={'visibility'}
+            description={'visibility'}
+          />
+          <Tile icon={'pop'} title={'pop'} info={'pop'} description={'pop'} />
         </section>
       </div>
     </div>
