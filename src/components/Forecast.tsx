@@ -46,8 +46,8 @@ function Forecast({ data }: Props) {
   const today = data.list[0];
 
   return (
-    <div className="w-full md:max-w-[500px] py-4 md:py-4 md:px-10 lg:px-24 h-full lg:h-auto">
-      <div className="mx-auto w-[300px]">
+    <div className="w-full md:max-w-[500px] py-4 md:py-4 md:px-10 lg:px-24 h-full lg:h-auto items-center">
+      <div className="mx-auto w-[300px] ">
         <section className="text-center">
           <h2 className="text-2xl font-black text-neutral-900">
             {data.name}
@@ -86,7 +86,9 @@ function Forecast({ data }: Props) {
           })}
         </section>
 
-        <section className="grid grid-cols-2 gap-5 h-20 items-center justify-items-center">
+        {/* <section className="grid grid-cols-2 gap-5 h-20 items-center justify-items-center"></section> */}
+
+        <section className="grid grid-cols-2 gap-5 items-center justify-items-center pt-4">
           <div className="text-sm text-neutral-500 space-y-1">
             <Sunrise />
             <div>{getHourAndMinutes(data.sunrise)}</div>
@@ -95,9 +97,7 @@ function Forecast({ data }: Props) {
             <Sunset />
             <div>{getHourAndMinutes(data.sunset)}</div>
           </div>
-        </section>
 
-        <section className="h-[300px] grid grid-cols-2 gap-5 ">
           <Tile
             icon={'wind'}
             title={'wind'}
