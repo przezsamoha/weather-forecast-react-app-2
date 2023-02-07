@@ -25,15 +25,14 @@ function Tile({ icon, title, info, description }: TileProps) {
   const Icon = icons[icon];
 
   return (
-    <article className="flex flex-col justify-between bg-neutral-100/75 backdrop-blur-lg border-none rounded-md h-[140px] p-2">
+    <article className="flex flex-col items-start justify-between bg-neutral-100 backdrop-blur-lg border-none rounded-md h-[140px] p-2">
       <div className="flex items-center space-x-2 text-neutral-600 text-sm">
         <Icon />
         <h4 className="text-xs font-medium uppercase">{title}</h4>
       </div>
-      <div className="text-left ml-2 space-y-2">
-        <h3 className="text-2xl">{info}</h3>
-        <p className="text-sm">{description}</p>
-      </div>
+
+      <h3 className="text-2xl">{info}</h3>
+      <p className="text-sm">{description}</p>
     </article>
   );
 }

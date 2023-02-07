@@ -18,7 +18,7 @@ function Search({
   handleReset,
 }: SearchProps) {
   return (
-    <section className="w-full md:max-w-[500px] flex flex-col text-center items-center justify-center md:px-10  h-full ">
+    <section className=" w-full md:w-full flex flex-col text-center items-center justify-center h-full lg:p-24 ">
       <Header />
       <section
         className="relative flex mt-5 md:mt-4 space-x-2"

@@ -46,7 +46,7 @@ function Forecast({ data }: Props) {
   const today = data.list[0];
 
   return (
-    <div className="w-full md:max-w-[500px] p-4 flex flex-col text-center items-center justify-center md:px-10 lg:p-24 h-full lg:h-[500px]">
+    <div className="w-full md:max-w-[500px] py-4 md:py-4 md:px-10 lg:px-24 h-full lg:h-auto">
       <div className="mx-auto w-[300px]">
         <section className="text-center">
           <h2 className="text-2xl font-black text-neutral-900">
@@ -66,7 +66,10 @@ function Forecast({ data }: Props) {
         <section className="flex overflow-x-scroll mt-4 pb-2">
           {data.list.map((item, i) => {
             return (
-              <div className="inline-block w-[50px] flex-shrink-0" key={i}>
+              <div
+                className="inline-block w-[50px] text-center flex-shrink-0"
+                key={i}
+              >
                 {/* TO FUTURE SELF: the below works to get hour from datetime */}
                 <p className="text-xs text-neutral-400">
                   {!i ? 'Now' : getHourNoMinutes(item.dt)}
@@ -83,18 +86,18 @@ function Forecast({ data }: Props) {
           })}
         </section>
 
-        <section className=" h-24 grid grid-cols-2 gap-5">
-          <div className="flex flex-col text-sm  text-neutral-500 space-y-2 items-center justify-center">
+        <section className="grid grid-cols-2 gap-5 h-20 items-center justify-items-center">
+          <div className="text-sm text-neutral-500 space-y-1">
             <Sunrise />
             <div>{getHourAndMinutes(data.sunrise)}</div>
           </div>
-          <div className="flex flex-col text-sm text-neutral-500 space-y-2 items-center justify-center">
+          <div className="text-sm text-neutral-500 space-y-1">
             <Sunset />
             <div>{getHourAndMinutes(data.sunset)}</div>
           </div>
         </section>
 
-        <section className="h-[300px] grid grid-cols-2 gap-5 mb-5 overflow-x-scroll">
+        <section className="h-[300px] grid grid-cols-2 gap-5 ">
           <Tile
             icon={'wind'}
             title={'wind'}
@@ -103,7 +106,7 @@ function Forecast({ data }: Props) {
           />
           <Tile
             icon={'feels'}
-            title={'feels'}
+            title={'feels like'}
             info={'feels'}
             description={'feel'}
           />
@@ -125,7 +128,12 @@ function Forecast({ data }: Props) {
             info={'visibility'}
             description={'visibility'}
           />
-          <Tile icon={'pop'} title={'pop'} info={'pop'} description={'pop'} />
+          <Tile
+            icon={'pop'}
+            title={'precipitation'}
+            info={'pop'}
+            description={'pop'}
+          />
         </section>
       </div>
     </div>
