@@ -1,24 +1,30 @@
 import Feels from './Icons/Feels';
 import Humidity from './Icons/Humidity';
-import Pop from './Icons/Pop';
+import Precipitation from './Icons/Precipitation';
 import Pressure from './Icons/Pressure';
 import Visibility from './Icons/Visibility';
 import Wind from './Icons/Wind';
 
-interface TileProps {
-  icon: 'feels' | 'humidity' | 'pop' | 'pressure' | 'visibility' | 'wind';
+export interface TileProps {
+  icon:
+    | 'wind'
+    | 'feels'
+    | 'humidity'
+    | 'pressure'
+    | 'visibility'
+    | 'precipitation';
   title: string;
   info: string | JSX.Element;
-  description: string;
+  description: string | number;
 }
 
 const icons = {
+  wind: Wind,
   feels: Feels,
   humidity: Humidity,
-  pop: Pop,
   pressure: Pressure,
   visibility: Visibility,
-  wind: Wind,
+  precipitation: Precipitation,
 };
 
 function Tile({ icon, title, info, description }: TileProps) {
@@ -30,7 +36,6 @@ function Tile({ icon, title, info, description }: TileProps) {
         <Icon />
         <h4 className="text-xs font-medium uppercase">{title}</h4>
       </div>
-
       <h3 className="text-2xl">{info}</h3>
       <p className="text-sm">{description}</p>
     </article>

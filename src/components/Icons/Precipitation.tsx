@@ -1,4 +1,4 @@
-function Pop() {
+function Precipitation() {
   return (
     <svg
       width="15"
@@ -18,4 +18,4 @@ function Pop() {
   );
 }
 
-export default Pop;
+export default Precipitation;
