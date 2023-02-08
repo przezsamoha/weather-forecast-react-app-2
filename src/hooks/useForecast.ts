@@ -15,7 +15,8 @@ function useForecast() {
       }`
     )
       .then((res) => res.json())
-      .then((data) => setlistOfCities(data));
+      .then((data) => setlistOfCities(data))
+      .catch((e) => console.log(e));
   }
 
   function getForecast(data: CityProps) {
@@ -34,7 +35,8 @@ function useForecast() {
           list: data.list.slice(0, 16),
         };
         setForecast(forecastData);
-      });
+      })
+      .catch((e) => console.log(e));
   }
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {

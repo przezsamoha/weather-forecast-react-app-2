@@ -3,8 +3,6 @@ import Sunrise from './Icons/Sunrise';
 import Sunset from './Icons/Sunset';
 import Tile, { TileProps } from './Tile';
 
-const VISIBILITY_TRESHOLD = 45000;
-
 interface Props {
   data: ForecastProps;
 }
@@ -73,52 +71,121 @@ function getHourNoMinutes(timestamp: number) {
   return `${hours}`;
 }
 
-function getVisibility(meters: number) {
-  return meters < VISIBILITY_TRESHOLD ? 'Good visibility.' : 'Poor visibility.';
+function getVisibilityDesctiption(distanceInMeters: number) {
+  switch (true) {
+    case distanceInMeters <= 1000:
+      return 'Very Poor';
+      break;
+    case distanceInMeters > 1000 && distanceInMeters <= 4000:
+      return 'Poor visibility.';
+      break;
+    case distanceInMeters > 4000 && distanceInMeters <= 10000:
+      return 'Medium visibility.';
+      break;
+    case distanceInMeters > 10000 && distanceInMeters <= 20000:
+      return 'Good visibility.';
+      break;
+    case distanceInMeters > 20000 && distanceInMeters <= 40000:
+      return 'Very good visibility.';
+      break;
+    case distanceInMeters > 40000:
+      return 'Very good visibility.';
+      break;
+    default:
+      break;
+  }
+}
+
+const standardPressureValue = 1013;
+
+function getPressureDescription(pressure: number) {
+  return pressure > standardPressureValue ? 'High pressure.' : 'Low pressure.';
+}
+
+function getHumidityDescription(level: number) {
+  switch (true) {
+    case level <= 55:
+      return 'Dry and comfortable.';
+      break;
+    case level > 55 && level < 65:
+      return `Slightly uncomfortable.`;
+      break;
+    case level >= 65:
+      return 'Lots of moisture, uncomfortable.';
+      break;
+    default:
+      break;
+  }
+}
+
+function getPrecipitationDescription(pop: number) {
+  switch (true) {
+    case pop < 0.2:
+      return 'No chance, ';
+      break;
+    case pop >= 0.2 && pop < 0.3:
+      return 'Slight chance, ';
+      break;
+    case pop >= 0.3 && pop < 0.6:
+      return 'A chance, ';
+      break;
+    case pop >= 0.6 && pop < 0.7:
+      return 'Likely, ';
+      break;
+    case pop >= 0.7:
+      return 'Most likely, ';
+    default:
+      break;
+  }
 }
 
 // weather icon url: 'http://openweathermap.org/img/w/10d.png';
 
 const getTilesMap = (today: Record<string, any>): TileProps[] => [
   {
+    icon: 'feels',
+    title: 'feels like',
+    info: <Degree temp={Math.floor(today.main.feels_like)} />,
+    description: `${
+      today.main.feels_like < today.main.temp
+        ? 'Feels colder.'
+        : 'Feels warmer.'
+    }`,
+  },
+  {
     icon: 'wind',
     title: 'wind',
     info: `${Math.round(today.wind.speed)} km/h ${getWindDirection(
       today.wind.deg
     )}`,
-    description: `gust ${today.wind.gust.toFixed(1)} km/h`,
-  },
-  {
-    icon: 'feels',
-    title: 'feels like',
-    info: <Degree temp={Math.floor(today.main.feels_like)} />,
-    description: `Feels ${
-      today.main.feels_like < today.main.temp ? 'colder' : 'warmer'
-    }`,
-  },
-  {
-    icon: 'humidity',
-    title: 'humidity',
-    info: `${today.main.humidity}%`,
-    description: 'humidity',
-  },
-  {
-    icon: 'pressure',
-    title: 'pressure',
-    info: `${today.main.pressure} hPa`,
-    description: 'pressure',
+    description: `Gust ${today.wind.gust.toFixed(1)} km/h.`,
   },
   {
     icon: 'visibility',
     title: 'visibility',
     info: `${today.visibility / 1000} km`,
-    description: `${getVisibility(today.visibility)}`,
+    description: `${getVisibilityDesctiption(today.visibility)}`,
   },
+  {
+    icon: 'pressure',
+    title: 'pressure',
+    info: `${today.main.pressure} hPa`,
+    description: `${getPressureDescription(today.main.pressure)}`,
+  },
+  {
+    icon: 'humidity',
+    title: 'humidity',
+    info: `${today.main.humidity}%`,
+    description: `${getHumidityDescription(today.main.humidity)}`,
+  },
+
   {
     icon: 'precipitation',
     title: 'precipitation',
-    info: `${today.pop} mm`,
-    description: 'precipitation',
+    info: `${Math.round(today.pop * 100)}%`,
+    description: `${getPrecipitationDescription(today.pop)} clouds at ${
+      today.clouds.all
+    }%.`,
   },
 ];
 
