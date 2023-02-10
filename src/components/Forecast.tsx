@@ -20,33 +20,38 @@ function Forecast({ data }: Props) {
   const today = data.list[0];
 
   return (
-    <div className="w-full md:max-w-[500px] py-4 md:py-4 md:px-10 lg:px-24 h-full lg:h-auto items-center">
-      <div className="mx-auto w-[300px] ">
-        <section className="text-center">
-          <h2 className="text-2xl font-black text-neutral-900">
+    <div className="dark:bg-neutral-800 w-full md:max-w-[500px] md:py-10 md:px-4 h-auto">
+      <div className="m-auto w-[300px]">
+        <section tabIndex={0} className="text-center">
+          <h2 className="text-2xl font-black text-neutral-900  dark:text-neutral-200">
             {data.name}
             <span className="font-thin">,{data.country}</span>
           </h2>
-          <h1 className="text-4xl font-bold text-neutral-900">
+          <h1 className="text-4xl font-bold text-neutral-900 dark:text-neutral-200">
             <Degree temp={Math.round(today.main.temp)} />
           </h1>
-          <h3 className="text-neutral-800">{today.weather[0].main}</h3>
-          <p className="text-neutral-800">
+          <h3 className="text-neutral-800 dark:text-neutral-300">
+            {today.weather[0].main}
+          </h3>
+          <p className="text-neutral-800 dark:text-neutral-300">
             from <Degree temp={Math.floor(today.main.temp_min)} /> to{' '}
             <Degree temp={Math.ceil(today.main.temp_max)} />
           </p>
         </section>
 
-        <section className="flex overflow-x-scroll mt-4 pb-2">
+        <section
+          tabIndex={0}
+          className="flex overflow-x-scroll mt-4 pb-2 dark:text-neutral-200"
+        >
           {data.list.map((item, i) => {
             return (
               <div
+                tabIndex={0}
                 className="inline-block w-[50px] text-center flex-shrink-0"
                 key={i}
               >
-                {/* TO FUTURE SELF: the below works to get hour from datetime */}
-                <p className="text-xs text-neutral-400">
-                  {i < 0 ? 'Now' : getHourNoMinutes(item.dt)}
+                <p className="text-xs text-neutral-500 dark:text-neutral-200">
+                  {i <= 0 ? 'Now' : getHourNoMinutes(item.dt)}
                 </p>
                 <img
                   alt={`weather-icon-${item.weather[0].description}`}
@@ -60,12 +65,21 @@ function Forecast({ data }: Props) {
           })}
         </section>
 
-        <section className="grid grid-cols-2 gap-5 items-center justify-items-center pt-4">
-          <div className="text-sm text-neutral-500 space-y-1">
+        <section
+          tabIndex={0}
+          className="grid grid-cols-2 gap-5 items-center justify-items-center pt-4 "
+        >
+          <div
+            tabIndex={0}
+            className="text-sm text-neutral-500 space-y-1 dark:text-neutral-400"
+          >
             <Sunrise />
             <div>{getHourAndMinutes(data.sunrise)}</div>
           </div>
-          <div className="text-sm text-neutral-500 space-y-1">
+          <div
+            tabIndex={0}
+            className="text-sm text-neutral-500 space-y-1 dark:text-neutral-400"
+          >
             <Sunset />
             <div>{getHourAndMinutes(data.sunset)}</div>
           </div>

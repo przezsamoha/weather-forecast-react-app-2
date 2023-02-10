@@ -1,6 +1,5 @@
-import { ChangeEvent } from 'react';
 import Header from './Header';
-import { CityProps, ForecastProps } from '../types/index';
+import { CityProps } from '../types/index';
 
 interface SearchProps {
   city: string;
@@ -18,7 +17,7 @@ function Search({
   handleReset,
 }: SearchProps) {
   return (
-    <section className=" w-full md:w-full flex flex-col text-center items-center justify-center h-full lg:p-24 ">
+    <section className="dark:bg-neutral-800 w-full md:w-full flex flex-col text-center items-center justify-center h-full lg:p-24 ">
       <Header />
       <section
         className="relative flex mt-5 md:mt-4 space-x-2"
@@ -40,7 +39,7 @@ function Search({
           </span>
 
           <input
-            className="w-full placeholder:text-neutral-400 font-normal text-neutral-400 block border border-neutral-300 rounded-md py-2 pl-9 pr-20 focus:outline-none focus:border-neutral-400 focus:ring-neutral-400 focus:ring-1 focus:text-neutral-400"
+            className="dark:bg-neutral-700 dark:border-none dark:focus-bg-neutral-700 w-full placeholder:text-neutral-400 font-normal text-neutral-400 block border border-neutral-300 rounded-md py-2 pl-9 pr-20 focus:outline-none focus:border-neutral-400 focus:ring-neutral-400 focus:ring-1 focus:text-neutral-400"
             placeholder="Search for the city..."
             type="text"
             name="search"
@@ -72,7 +71,7 @@ function Search({
           {listOfCities.map((city: CityProps, index: number) => (
             <li key={`${city.name}-${index}`}>
               <button
-                className="rounded-md p-2 pl-7 mt-2 space-y-1 font-normal text-neutral-900 hover:font-bold hover:text-neutral-800 focus:text-neutral-800"
+                className="dark:text-neutral-200 dark:hover:font-semibold rounded-md p-2 pl-7 mt-2 space-y-1 font-normal text-neutral-900 hover:font-bold hover:text-neutral-800 focus:text-neutral-800"
                 onClick={() => {
                   handleSelectedCity(city);
                 }}

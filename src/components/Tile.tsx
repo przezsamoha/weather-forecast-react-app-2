@@ -31,13 +31,18 @@ function Tile({ icon, title, info, description }: TileProps) {
   const Icon = icons[icon];
 
   return (
-    <article className=" w-[140px] h-[140px] flex flex-col items-start justify-between bg-neutral-100 rounded-md p-2">
-      <div className="flex items-center space-x-2 text-neutral-600 text-sm">
+    <article
+      tabIndex={0}
+      className="dark:bg-neutral-700/25 w-[140px] h-[140px] flex flex-col items-start justify-between bg-neutral-100 rounded-md p-2"
+    >
+      <div className="flex space-x-2 dark:text-neutral-500 text-neutral-600 text-sm">
         <Icon />
-        <h4 className="text-xs font-medium uppercase">{title}</h4>
+        <h4 className="text-xs font-medium uppercase ">{title}</h4>
       </div>
-      <h3 className="text-2xl">{info}</h3>
-      <p className="text-sm">{description}</p>
+      <h3 className="text-2xl  dark:text-neutral-300 dark:font-medium">
+        {info}
+      </h3>
+      <p className="text-sm  dark:text-neutral-300">{description}</p>
     </article>
   );
 }
