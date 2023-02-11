@@ -18,7 +18,9 @@ function Search({
 }: SearchProps) {
   return (
     <section className="dark:bg-neutral-800 w-full md:w-full flex flex-col text-center items-center justify-center h-full lg:p-24 ">
-      <Header />
+      <>
+        <Header />
+      </>
       <section
         className="relative flex mt-5 md:mt-4 space-x-2"
         onSubmit={(e) => e.preventDefault()}

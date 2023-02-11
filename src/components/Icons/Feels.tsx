@@ -1,4 +1,4 @@
-function Feels() {
+export default function Feels() {
   return (
     <svg
       width="15"
@@ -15,5 +15,3 @@ function Feels() {
     </svg>
   );
 }
-
-export default Feels;

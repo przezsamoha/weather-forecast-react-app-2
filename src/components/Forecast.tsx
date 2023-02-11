@@ -14,15 +14,13 @@ interface Props {
   data: ForecastProps;
 }
 
-// weather icon url: 'http://openweathermap.org/img/w/10d.png';
-
 function Forecast({ data }: Props) {
   const today = data.list[0];
 
   return (
-    <div className="dark:bg-neutral-800 w-full md:max-w-[500px] md:py-10 md:px-4 h-auto">
-      <div className="m-auto w-[300px]">
-        <section tabIndex={0} className="text-center">
+    <div className="dark:bg-neutral-800 w-full md:py-10 md:px-10 flex justify-center items-center h-full">
+      <div className="w-[300px]">
+        <section className="text-center">
           <h2 className="text-2xl font-black text-neutral-900  dark:text-neutral-200">
             {data.name}
             <span className="font-thin">,{data.country}</span>
@@ -40,8 +38,9 @@ function Forecast({ data }: Props) {
         </section>
 
         <section
+          aria-label="three hour forecast"
           tabIndex={0}
-          className="flex overflow-x-scroll mt-4 pb-2 dark:text-neutral-200"
+          className="flex overflow-x-scroll mt-6 pb-2 dark:text-neutral-200"
         >
           {data.list.map((item, i) => {
             return (
@@ -54,7 +53,7 @@ function Forecast({ data }: Props) {
                   {i <= 0 ? 'Now' : getHourNoMinutes(item.dt)}
                 </p>
                 <img
-                  alt={`weather-icon-${item.weather[0].description}`}
+                  alt={`${item.weather[0].description}`}
                   src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
                 />
                 <p className="text-sm font-medium pb-2">
@@ -84,9 +83,10 @@ function Forecast({ data }: Props) {
             <div>{getHourAndMinutes(data.sunset)}</div>
           </div>
 
-          {getTilesBlueprint(today).map((tile) => {
+          {getTilesBlueprint(today).map((tile, index) => {
             return (
               <Tile
+                key={index}
                 icon={tile.icon}
                 title={tile.title}
                 info={tile.info}

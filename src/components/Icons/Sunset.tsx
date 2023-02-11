@@ -1,6 +1,9 @@
 function Sunset() {
   return (
-    <div className="grid place-items-center dark:text-neutral-500">
+    <div
+      aria-label="Sunset at"
+      className="grid place-items-center dark:text-neutral-500"
+    >
       <svg
         width="20"
         height="20"

@@ -6,7 +6,7 @@ function Degree({ temp }: DegreeProps) {
   return (
     <span>
       {temp}
-      <sup>o</sup>
+      <sup aria-label="degree celcius">o</sup>
     </span>
   );
 }
