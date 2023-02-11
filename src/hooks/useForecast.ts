@@ -61,10 +61,11 @@ function useForecast() {
     }
   }, [selectedCity]);
 
-  function handleReset(e: React.MouseEvent<HTMLButtonElement>) {
+  function handleReset() {
     setCity('');
     setlistOfCities([]);
     setForecast(null);
+    setSelectedCity(null);
   }
 
   return {

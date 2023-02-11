@@ -1,6 +1,6 @@
 import { ForecastProps } from '../types';
-import Sunrise from './Icons/Sunrise';
-import Sunset from './Icons/Sunset';
+import SunriseIcon from './Icons/SunriseIcon';
+import SunsetIcon from './Icons/SunsetIcon';
 import Tile, { TileProps } from './Tile';
 import Degree from './Degree';
 
@@ -72,14 +72,14 @@ function Forecast({ data }: Props) {
             tabIndex={0}
             className="text-sm text-neutral-500 space-y-1 dark:text-neutral-400"
           >
-            <Sunrise />
+            <SunriseIcon />
             <div>{getHourAndMinutes(data.sunrise)}</div>
           </div>
           <div
             tabIndex={0}
             className="text-sm text-neutral-500 space-y-1 dark:text-neutral-400"
           >
-            <Sunset />
+            <SunsetIcon />
             <div>{getHourAndMinutes(data.sunset)}</div>
           </div>
 

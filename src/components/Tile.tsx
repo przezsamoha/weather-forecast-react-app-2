@@ -1,9 +1,9 @@
-import Feels from './Icons/Feels';
-import Humidity from './Icons/Humidity';
-import Precipitation from './Icons/Precipitation';
-import Pressure from './Icons/Pressure';
-import Visibility from './Icons/Visibility';
-import Wind from './Icons/Wind';
+import FeelsIcon from './Icons/FeelsIcon';
+import HumidityIcon from './Icons/HumidityIcon';
+import PrecipitationIcon from './Icons/PrecipitationIcon';
+import PressureIcon from './Icons/PressureIcon';
+import VisibilityIcon from './Icons/VisibilityIcon';
+import WindIcon from './Icons/WindIcon';
 
 export interface TileProps {
   icon:
@@ -19,12 +19,12 @@ export interface TileProps {
 }
 
 const icons = {
-  wind: Wind,
-  feels: Feels,
-  humidity: Humidity,
-  pressure: Pressure,
-  visibility: Visibility,
-  precipitation: Precipitation,
+  wind: WindIcon,
+  feels: FeelsIcon,
+  humidity: HumidityIcon,
+  pressure: PressureIcon,
+  visibility: VisibilityIcon,
+  precipitation: PrecipitationIcon,
 };
 
 function Tile({ icon, title, info, description }: TileProps) {
@@ -37,7 +37,7 @@ function Tile({ icon, title, info, description }: TileProps) {
     >
       <div
         aria-label={title}
-        className="flex space-x-2 dark:text-neutral-500 text-neutral-600 text-sm"
+        className="flex space-x-2 dark:text-neutral-400 text-neutral-600 text-sm"
       >
         <Icon />
         <h4 className="text-xs font-medium uppercase ">{title}</h4>

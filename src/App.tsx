@@ -4,6 +4,7 @@ import useForecast from './hooks/useForecast';
 import Search from './components/Search';
 import Forecast from './components/Forecast';
 import ToggleDarkMode from './components/ToggleDarkMode';
+import ReturnToSearch from './components/ReturnToSearch';
 
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -25,6 +26,7 @@ function App() {
         darkMode ? 'dark' : 'light'
       } dark:bg-neutral-800 flex justify-center items-center h-screen w-full`}
     >
+      {forecast && <ReturnToSearch handleReset={handleReset} />}
       <ToggleDarkMode toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
       {forecast ? (
         <Forecast data={forecast} />
