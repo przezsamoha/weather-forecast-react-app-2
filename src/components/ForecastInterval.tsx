@@ -1,0 +1,33 @@
+import { getHourNoMinutes } from '../helpers';
+import { ForecastListElementProps } from '../types';
+import Degree from './Degree';
+
+interface ForecastIntervalProps {
+  forecastIntervalData: ForecastListElementProps;
+  index: number;
+}
+
+export default function ForecastInterval({
+  forecastIntervalData,
+  index,
+}: ForecastIntervalProps) {
+  return (
+    <div
+      className="inline-block w-[50px] text-center flex-shrink-0"
+      key={index}
+    >
+      <p className="text-xs text-neutral-500 dark:text-neutral-200">
+        {index <= 0 ? 'Now' : getHourNoMinutes(forecastIntervalData.dt)}
+      </p>
+      <p>
+        <img
+          alt={`${forecastIntervalData.weather[0].description}`}
+          src={`http://openweathermap.org/img/wn/${forecastIntervalData.weather[0].icon}@2x.png`}
+        />
+      </p>
+      <p className="text-sm font-medium pb-2">
+        <Degree temp={Math.round(forecastIntervalData.main.temp)} />
+      </p>
+    </div>
+  );
+}

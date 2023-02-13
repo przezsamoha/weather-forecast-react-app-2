@@ -1,4 +1,4 @@
-function Sunrise() {
+export default function Sunrise() {
   return (
     <svg
       width="20"
@@ -17,4 +17,3 @@ function Sunrise() {
     </svg>
   );
 }
-export default Sunrise;

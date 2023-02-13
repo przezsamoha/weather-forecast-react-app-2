@@ -1,4 +1,4 @@
-function Precipitation() {
+export default function Precipitation() {
   return (
     <svg
       width="15"
@@ -17,5 +17,3 @@ function Precipitation() {
     </svg>
   );
 }
-
-export default Precipitation;

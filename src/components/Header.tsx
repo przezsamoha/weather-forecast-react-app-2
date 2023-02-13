@@ -1,4 +1,4 @@
-function Header() {
+export default function Header() {
   return (
     <section>
       <h1 className="text-3xl font-black text-neutral-900 dark:text-neutral-300">
@@ -10,5 +10,3 @@ function Header() {
     </section>
   );
 }
-
-export default Header;

@@ -1,4 +1,4 @@
-function Sunset() {
+export default function Sunset() {
   return (
     <svg
       width="20"
@@ -17,4 +17,3 @@ function Sunset() {
     </svg>
   );
 }
-export default Sunset;

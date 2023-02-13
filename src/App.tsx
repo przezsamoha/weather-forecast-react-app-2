@@ -29,7 +29,7 @@ function App() {
       {forecast && <ReturnToSearch handleReset={handleReset} />}
       <ToggleDarkMode toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
       {forecast ? (
-        <Forecast data={forecast} />
+        <Forecast forecastData={forecast} />
       ) : (
         <Search
           city={city}

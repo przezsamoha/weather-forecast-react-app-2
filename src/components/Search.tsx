@@ -11,7 +11,7 @@ interface SearchProps {
   handleReset: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-function Search({
+export default function Search({
   city,
   listOfCities,
   handleInputChange,
@@ -42,6 +42,7 @@ function Search({
         </div>
         {city && (
           <button
+            type="button"
             className="absolute top-2 right-2 w-6 h-6 stroke-neutral-400 hover:stroke-neutral-600"
             onClick={handleReset}
           >
@@ -53,6 +54,7 @@ function Search({
           {listOfCities.map((city: CityProps, index: number) => (
             <li key={`${city.name}-${index}`}>
               <button
+                type="button"
                 className="dark:text-neutral-200 dark:hover:font-semibold rounded-md p-2 pl-7 mt-2 space-y-1 font-normal text-neutral-900 hover:font-bold hover:text-neutral-800 focus:text-neutral-800"
                 onClick={() => {
                   handleSelectedCity(city);
@@ -67,5 +69,3 @@ function Search({
     </section>
   );
 }
-
-export default Search;

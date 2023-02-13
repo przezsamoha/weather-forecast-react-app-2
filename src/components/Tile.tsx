@@ -31,14 +31,8 @@ function Tile({ icon, title, info, description }: TileProps) {
   const Icon = icons[icon];
 
   return (
-    <article
-      tabIndex={0}
-      className="dark:bg-neutral-700/25 w-[140px] h-[140px] flex flex-col items-start justify-between bg-neutral-100 rounded-md p-2"
-    >
-      <div
-        aria-label={title}
-        className="flex space-x-2 dark:text-neutral-400 text-neutral-600 text-sm"
-      >
+    <article className="dark:bg-neutral-700/25 w-[140px] h-[140px] flex flex-col items-start justify-between bg-neutral-100 rounded-md p-2">
+      <div className="flex space-x-2 dark:text-neutral-400 text-neutral-600 text-sm">
         <Icon />
         <h4 className="text-xs font-medium uppercase ">{title}</h4>
       </div>

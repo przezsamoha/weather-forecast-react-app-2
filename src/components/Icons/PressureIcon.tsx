@@ -1,4 +1,4 @@
-function Pressure() {
+export default function Pressure() {
   return (
     <svg
       width="15"
@@ -11,5 +11,3 @@ function Pressure() {
     </svg>
   );
 }
-
-export default Pressure;

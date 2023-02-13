@@ -1,4 +1,4 @@
-import { useState, useEffect, ChangeEvent } from 'react';
+import { useState, useEffect } from 'react';
 import { CityProps, ForecastProps } from '../types/index';
 
 function useForecast() {
@@ -7,10 +7,12 @@ function useForecast() {
   const [selectedCity, setSelectedCity] = useState<CityProps | null>(null);
   const [forecast, setForecast] = useState<ForecastProps | null>(null);
 
+  const URL = 'http://api.openweathermap.org';
+
   function getListOfCities(data: string) {
-    let limit = 6;
+    const limit = 6;
     fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${data.trim()}&limit=${limit}&appid=${
+      `${URL}/geo/1.0/direct?q=${data.trim()}&limit=${limit}&appid=${
         import.meta.env.VITE_APP_API_KEY
       }`
     )
@@ -23,7 +25,7 @@ function useForecast() {
     fetch(
       //remember to update the below API from /weather?/ to /forecast?/ to get the forecast instead of the current weather
 
-      `https://api.openweathermap.org/data/2.5/forecast?lat=${data.lat}&lon=${
+      `${URL}/data/2.5/forecast?lat=${data.lat}&lon=${
         data.lon
       }&units=metric&appid=${import.meta.env.VITE_APP_API_KEY}`
     )

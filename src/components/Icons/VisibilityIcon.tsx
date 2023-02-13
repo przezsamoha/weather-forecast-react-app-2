@@ -1,4 +1,4 @@
-function Visibility() {
+export default function Visibility() {
   return (
     <svg
       width="15"
@@ -11,5 +11,3 @@ function Visibility() {
     </svg>
   );
 }
-
-export default Visibility;

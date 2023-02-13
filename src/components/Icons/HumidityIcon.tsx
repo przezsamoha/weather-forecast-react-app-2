@@ -1,4 +1,4 @@
-function Humidity() {
+export default function Humidity() {
   return (
     <svg
       width="15"
@@ -17,5 +17,3 @@ function Humidity() {
     </svg>
   );
 }
-
-export default Humidity;

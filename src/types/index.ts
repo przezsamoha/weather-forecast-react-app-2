@@ -38,7 +38,7 @@ export interface ForecastListElementProps {
   visibility: number;
 }
 
-export interface ForecastProps {
+export interface ForecastDataProps {
   name: string;
   country: string;
   timezone: number;

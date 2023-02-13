@@ -1,4 +1,4 @@
-function Wind() {
+export default function Wind() {
   return (
     <svg
       width="15"
@@ -11,5 +11,3 @@ function Wind() {
     </svg>
   );
 }
-
-export default Wind;
