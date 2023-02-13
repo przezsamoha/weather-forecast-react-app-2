@@ -40,7 +40,7 @@ function Forecast({ data }: Props) {
         <section
           aria-label="three hour forecast"
           tabIndex={0}
-          className="flex overflow-x-scroll mt-6 pb-2 dark:text-neutral-200"
+          className="dark:bg-neutral-700/25 dark:rounded-md dark:pt-2 dark:pb-2 dark:pl-1 flex overflow-x-scroll mt-6 pb-2 dark:text-neutral-200"
         >
           {data.list.map((item, i) => {
             return (
@@ -52,10 +52,12 @@ function Forecast({ data }: Props) {
                 <p className="text-xs text-neutral-500 dark:text-neutral-200">
                   {i <= 0 ? 'Now' : getHourNoMinutes(item.dt)}
                 </p>
-                <img
-                  alt={`${item.weather[0].description}`}
-                  src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
-                />
+                <p>
+                  <img
+                    alt={`${item.weather[0].description}`}
+                    src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
+                  />
+                </p>
                 <p className="text-sm font-medium pb-2">
                   <Degree temp={Math.round(item.main.temp)} />
                 </p>
@@ -70,16 +72,26 @@ function Forecast({ data }: Props) {
         >
           <div
             tabIndex={0}
-            className="text-sm text-neutral-500 space-y-1 dark:text-neutral-400"
+            className="text-sm text-neutral-500 space-y-1 dark:text-neutral-300"
           >
-            <SunriseIcon />
+            <p
+              aria-label="Sunrise at"
+              className="grid place-items-center dark:text-neutral-400"
+            >
+              <SunriseIcon />
+            </p>
             <div>{getHourAndMinutes(data.sunrise)}</div>
           </div>
           <div
             tabIndex={0}
-            className="text-sm text-neutral-500 space-y-1 dark:text-neutral-400"
+            className="text-sm text-neutral-500 space-y-1 dark:text-neutral-300"
           >
-            <SunsetIcon />
+            <p
+              aria-label="Sunset at"
+              className="grid place-items-center dark:text-neutral-400"
+            >
+              <SunsetIcon />
+            </p>
             <div>{getHourAndMinutes(data.sunset)}</div>
           </div>
 

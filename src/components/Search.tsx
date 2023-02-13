@@ -1,5 +1,7 @@
 import Header from './Header';
 import { CityProps } from '../types/index';
+import SearchIcon from './Icons/SearchIcon';
+import ResetIcon from './Icons/ResetIcon';
 
 interface SearchProps {
   city: string;
@@ -26,22 +28,11 @@ function Search({
         onSubmit={(e) => e.preventDefault()}
       >
         <div className="relative block">
-          <span className="absolute inset-y-0 ml-2 flex items-center pl-2  fill-neutral-400  focus:fill-neutral-600">
-            <svg
-              className="w-4 h-4 "
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
-                clipRule="evenodd"
-              />
-            </svg>
+          <span className="absolute inset-y-0 ml-2 flex items-center pl-2  fill-neutral-500  focus:fill-neutral-600">
+            <SearchIcon />
           </span>
-
           <input
-            className="dark:bg-neutral-700 dark:border-none dark:focus-bg-neutral-700 w-full placeholder:text-neutral-400 font-normal text-neutral-400 block border border-neutral-300 rounded-md py-2 pl-9 pr-20 focus:outline-none focus:border-neutral-400 focus:ring-neutral-400 focus:ring-1 focus:text-neutral-400"
+            className="dark:bg-neutral-500 dark:text-neutral-200 dark:border-none dark:focus-bg-neutral-700 w-full placeholder:text-neutral-600 font-normal text-neutral-600 block border border-neutral-600 rounded-md py-2 pl-9 pr-20 focus:outline-none focus:border-neutral-600 focus:ring-neutral-600 focus:ring-1 focus:text-neutral-600"
             placeholder="Search for the city..."
             type="text"
             name="search"
@@ -50,22 +41,11 @@ function Search({
           />
         </div>
         {city && (
-          <button className="absolute inset-y-0 right-2" onClick={handleReset}>
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1}
-                className="w-6 h-6 stroke-neutral-300  hover:stroke-neutral-900"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </span>
+          <button
+            className="absolute top-2 right-2 w-6 h-6 stroke-neutral-400 hover:stroke-neutral-600"
+            onClick={handleReset}
+          >
+            <ResetIcon />
           </button>
         )}
 
