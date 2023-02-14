@@ -5,7 +5,7 @@ import PressureIcon from './Icons/PressureIcon';
 import VisibilityIcon from './Icons/VisibilityIcon';
 import WindIcon from './Icons/WindIcon';
 
-export interface TileProps {
+export interface ForecastTileProps {
   icon:
     | 'wind'
     | 'feels'
@@ -27,7 +27,12 @@ const icons = {
   precipitation: PrecipitationIcon,
 };
 
-function Tile({ icon, title, info, description }: TileProps) {
+export default function ForecastTile({
+  icon,
+  title,
+  info,
+  description,
+}: ForecastTileProps) {
   const Icon = icons[icon];
 
   return (
@@ -43,5 +48,3 @@ function Tile({ icon, title, info, description }: TileProps) {
     </article>
   );
 }
-
-export default Tile;

@@ -1,4 +1,5 @@
 import { ForecastDataProps } from '../types';
+
 import Degree from './Degree';
 
 interface ForecastHeaderProps {

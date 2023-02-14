@@ -1,3 +1,11 @@
+export interface SearchProps {
+  city: string;
+  listOfCities: [];
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSelectedCity: (city: CityProps) => void;
+  handleReset: (e: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
 export interface CityProps {
   name: string;
   country: string;
@@ -47,9 +55,4 @@ export interface ForecastDataProps {
   sunset: number;
 
   list: Array<ForecastListElementProps>;
-}
-
-export interface SuggestionsProps {
-  listOfCities: [];
-  handleSelectedCity: (city: CityProps) => void;
 }

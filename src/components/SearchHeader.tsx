@@ -1,4 +1,4 @@
-export default function Header() {
+export default function SearchHeader() {
   return (
     <section>
       <h1 className="text-3xl font-black text-neutral-900 dark:text-neutral-300">

@@ -1,5 +1,6 @@
-import { getHourNoMinutes } from '../helpers';
 import { ForecastListElementProps } from '../types';
+import { getHourNoMinutes } from '../helpers';
+
 import Degree from './Degree';
 
 interface ForecastIntervalProps {

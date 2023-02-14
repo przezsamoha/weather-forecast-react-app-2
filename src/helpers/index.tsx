@@ -1,5 +1,5 @@
 import { ForecastListElementProps } from '../types';
-import { TileProps } from '../components/Tile';
+import { ForecastTileProps } from '../components/ForecastTile';
 import Degree from '../components/Degree';
 
 export function getHourAndMinutes(timestamp: number) {
@@ -123,7 +123,7 @@ export function getWindDirection(degree: number) {
 
 export function getTilesBlueprint(
   today: ForecastListElementProps
-): TileProps[] {
+): ForecastTileProps[] {
   return [
     {
       icon: 'feels',
