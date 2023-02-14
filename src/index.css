@@ -11,3 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+div, section, article {
+  border: 1px solid pink;
+}
