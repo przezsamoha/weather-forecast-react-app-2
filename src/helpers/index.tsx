@@ -59,32 +59,26 @@ export function getPrecipitationDescription(pop: number) {
   }
 }
 
-const standardPressureValue = 1013;
-
 export function getPressureDescription(pressure: number) {
+  const standardPressureValue = 1013;
+
   return pressure > standardPressureValue ? 'High pressure.' : 'Low pressure.';
 }
 
 export function getVisibilityDesctiption(distanceInMeters: number) {
   switch (true) {
     case distanceInMeters <= 1000:
-      return 'Very Poor';
-      break;
+      return 'Very poor visibility.';
     case distanceInMeters > 1000 && distanceInMeters <= 4000:
       return 'Poor visibility.';
-      break;
     case distanceInMeters > 4000 && distanceInMeters <= 10000:
       return 'Medium visibility.';
-      break;
     case distanceInMeters > 10000 && distanceInMeters <= 20000:
       return 'Good visibility.';
-      break;
     case distanceInMeters > 20000 && distanceInMeters <= 40000:
       return 'Very good visibility.';
-      break;
     case distanceInMeters > 40000:
-      return 'Very good visibility.';
-      break;
+      return 'Great visibility.';
     default:
       break;
   }
