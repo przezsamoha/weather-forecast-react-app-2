@@ -1,6 +1,7 @@
 export default function Pressure() {
   return (
     <svg
+      aria-hidden="true"
       width="15"
       height="15"
       viewBox="0 0 100 100"

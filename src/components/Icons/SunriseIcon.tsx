@@ -1,6 +1,7 @@
 export default function Sunrise() {
   return (
     <svg
+      aria-hidden="true"
       width="20"
       height="20"
       viewBox="0 0 108 108"

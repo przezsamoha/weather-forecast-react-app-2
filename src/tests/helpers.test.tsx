@@ -5,7 +5,6 @@ import {
   getPressureDescription,
   getVisibilityDesctiption,
   getWindDirection,
-  // getTilesBlueprint,
 } from "../helpers";
 
 describe("getHourAndMinutes", () => {
@@ -183,56 +182,3 @@ describe("getWindDirection", () => {
     expect(getWindDirection(degree)).toMatch(expected);
   });
 });
-
-// import FeelsIcon from "../components/Icons/FeelsIcon";
-// import Degree from "../components/Degree";
-
-// describe("getTilesBlueprint", () => {
-//   it("should return an object with an FeelsIcon icon, 'FEELS LIKE' title, '10 degrees C' info and 'Feels warmer.' description", () => {
-//     const icons = {
-//       feels: FeelsIcon,
-//     };
-
-//     const today = {
-//       dt: 1676462400,
-//       main: {
-//         feels_like: 10.17,
-//         humidity: 57,
-//         pressure: 1029,
-//         temp: 11.48,
-//         temp_max: 15.17,
-//         temp_min: 11.48,
-//       },
-//       weather: [
-//         {
-//           description: "clear sky",
-//           icon: "01d",
-//           main: "Clear",
-//         },
-//       ],
-//       wind: {
-//         speed: 0.95,
-//         gust: 0.99,
-//         deg: 190,
-//       },
-//       clouds: {
-//         all: 0,
-//       },
-//       pop: 0,
-//       visibility: 10000,
-//     };
-
-//     const expected = {
-//       icon: icons["feels"],
-//       title: "feels like",
-//       info: <Degree temp={Math.floor(today.main.feels_like)} />,
-//       description: `${
-//         today.main.feels_like < today.main.temp
-//           ? "Feels colder."
-//           : "Feels warmer."
-//       }`,
-//     };
-
-//     expect(getTilesBlueprint(today)).toMatch(expected);
-//   });
-// });

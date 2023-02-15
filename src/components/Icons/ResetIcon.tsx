@@ -1,14 +1,12 @@
 export default function ResetIcon() {
   return (
     <svg
-      aria-labelledby="resetIcon"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1}
+      className="hover:fill-neutral-900 hover:stroke-neutral-100 hover:ring-neutral-900"
     >
-      <title id="resetIcon">reset icon</title>
-
       <path
         strokeLinecap="round"
         strokeLinejoin="round"

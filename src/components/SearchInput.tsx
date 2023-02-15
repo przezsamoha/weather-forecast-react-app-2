@@ -1,10 +1,10 @@
-import { SearchProps } from '../types';
+import { SearchProps } from "../types";
 
-import SearchIcon from './Icons/SearchIcon';
+import SearchIcon from "./Icons/SearchIcon";
 
 type SeachInputType = Omit<
   SearchProps,
-  'listOfCities' | 'handleSelectedCity' | 'handleReset'
+  "listOfCities" | "handleSelectedCity" | "handleReset"
 >;
 
 export default function SearchInput({
@@ -13,11 +13,11 @@ export default function SearchInput({
 }: SeachInputType) {
   return (
     <div className="relative block">
-      <span className="absolute inset-y-0 ml-2 flex items-center pl-2  fill-neutral-500  focus:fill-neutral-600">
+      <span className="absolute inset-y-0 ml-2 flex items-center pl-2  fill-neutral-400 dark:fill-neutral-400">
         <SearchIcon />
       </span>
       <input
-        className="dark:bg-neutral-500 dark:text-neutral-200 dark:border-none dark:focus-bg-neutral-700 w-full placeholder:text-neutral-600 font-normal text-neutral-600 block border border-neutral-600 rounded-md py-2 pl-9 pr-20 focus:outline-none focus:border-neutral-600 focus:ring-neutral-600 focus:ring-1 focus:text-neutral-600"
+        className="dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:border-none dark:focus:ring-none w-full dark:placeholder:text-neutral-400 placeholder:text-neutral-400 text-md text-neutral-600  border border-neutral-300 hover:border-neutral-400 rounded-md py-2 pl-9 pr-20 focus:text-neutral-600 cursor-pointer"
         placeholder="Search for the city..."
         type="text"
         name="search"
