@@ -1,6 +1,6 @@
-import { ForecastListElementProps } from '../types';
-import { ForecastTileProps } from '../components/ForecastTile';
-import Degree from '../components/Degree';
+import { ForecastListElementProps } from "../types";
+import { ForecastTileProps } from "../components/ForecastTile";
+import Degree from "../components/Degree";
 
 export function getHourAndMinutes(timestamp: number) {
   const date = new Date(timestamp * 1000);
@@ -25,13 +25,13 @@ export function getHourNoMinutes(timestamp: number) {
 export function getHumidityDescription(level: number) {
   switch (true) {
     case level <= 55:
-      return 'Dry and comfortable.';
+      return "Dry and comfortable.";
       break;
     case level > 55 && level < 65:
       return `Slightly uncomfortable.`;
       break;
     case level >= 65:
-      return 'Lots of moisture, uncomfortable.';
+      return "Lots of moisture, uncomfortable.";
       break;
     default:
       break;
@@ -41,19 +41,19 @@ export function getHumidityDescription(level: number) {
 export function getPrecipitationDescription(pop: number) {
   switch (true) {
     case pop < 0.2:
-      return 'No chance, ';
+      return "No chance, ";
       break;
     case pop >= 0.2 && pop < 0.3:
-      return 'Slight chance, ';
+      return "Slight chance, ";
       break;
     case pop >= 0.3 && pop < 0.6:
-      return 'A chance, ';
+      return "A chance, ";
       break;
     case pop >= 0.6 && pop < 0.7:
-      return 'Likely, ';
+      return "Likely, ";
       break;
     case pop >= 0.7:
-      return 'Most likely, ';
+      return "Most likely, ";
     default:
       break;
   }
@@ -62,23 +62,23 @@ export function getPrecipitationDescription(pop: number) {
 export function getPressureDescription(pressure: number) {
   const standardPressureValue = 1013;
 
-  return pressure > standardPressureValue ? 'High pressure.' : 'Low pressure.';
+  return pressure > standardPressureValue ? "High pressure." : "Low pressure.";
 }
 
 export function getVisibilityDesctiption(distanceInMeters: number) {
   switch (true) {
     case distanceInMeters <= 1000:
-      return 'Very poor visibility.';
+      return "Very poor visibility.";
     case distanceInMeters > 1000 && distanceInMeters <= 4000:
-      return 'Poor visibility.';
+      return "Poor visibility.";
     case distanceInMeters > 4000 && distanceInMeters <= 10000:
-      return 'Medium visibility.';
+      return "Medium visibility.";
     case distanceInMeters > 10000 && distanceInMeters <= 20000:
-      return 'Good visibility.';
+      return "Good visibility.";
     case distanceInMeters > 20000 && distanceInMeters <= 40000:
-      return 'Very good visibility.';
+      return "Very good visibility.";
     case distanceInMeters > 40000:
-      return 'Great visibility.';
+      return "Great visibility.";
     default:
       break;
   }
@@ -87,29 +87,21 @@ export function getVisibilityDesctiption(distanceInMeters: number) {
 export function getWindDirection(degree: number) {
   switch (true) {
     case degree === 360:
-      return 'N';
-      break;
+      return "N";
     case degree === 90:
-      return 'E';
-      break;
+      return "E";
     case degree === 180:
-      return 'S';
-      break;
+      return "S";
     case degree === 270:
-      return 'W';
-      break;
+      return "W";
     case degree > 0 && degree < 90:
-      return 'NE';
-      break;
+      return "NE";
     case degree > 90 && degree < 180:
-      return 'SE';
-      break;
+      return "SE";
     case degree > 180 && degree < 270:
-      return 'SW';
-      break;
+      return "SW";
     case degree > 270 && degree < 360:
-      return 'NW';
-      break;
+      return "NW";
     default:
       break;
   }
@@ -120,49 +112,49 @@ export function getTilesBlueprint(
 ): ForecastTileProps[] {
   return [
     {
-      icon: 'feels',
-      title: 'feels like',
+      icon: "feels",
+      title: "feels like",
       info: <Degree temp={Math.floor(today.main.feels_like)} />,
       description: `${
         today.main.feels_like < today.main.temp
-          ? 'Feels colder.'
-          : 'Feels warmer.'
+          ? "Feels colder."
+          : "Feels warmer."
       }`,
     },
-    {
-      icon: 'wind',
-      title: 'wind',
-      info: `${Math.round(today.wind.speed)} km/h ${getWindDirection(
-        today.wind.deg
-      )}`,
-      description: `Gust ${today.wind.gust.toFixed(1)} km/h.`,
-    },
-    {
-      icon: 'visibility',
-      title: 'visibility',
-      info: `${today.visibility / 1000} km`,
-      description: `${getVisibilityDesctiption(today.visibility)}`,
-    },
-    {
-      icon: 'pressure',
-      title: 'pressure',
-      info: `${today.main.pressure} hPa`,
-      description: `${getPressureDescription(today.main.pressure)}`,
-    },
-    {
-      icon: 'humidity',
-      title: 'humidity',
-      info: `${today.main.humidity}%`,
-      description: `${getHumidityDescription(today.main.humidity)}`,
-    },
+    // {
+    //   icon: "wind",
+    //   title: "wind",
+    //   info: `${Math.round(today.wind.speed)} km/h ${getWindDirection(
+    //     today.wind.deg
+    //   )}`,
+    //   description: `Gust ${today.wind.gust.toFixed(1)} km/h.`,
+    // },
+    // {
+    //   icon: "visibility",
+    //   title: "visibility",
+    //   info: `${today.visibility / 1000} km`,
+    //   description: `${getVisibilityDesctiption(today.visibility)}`,
+    // },
+    // {
+    //   icon: "pressure",
+    //   title: "pressure",
+    //   info: `${today.main.pressure} hPa`,
+    //   description: `${getPressureDescription(today.main.pressure)}`,
+    // },
+    // {
+    //   icon: "humidity",
+    //   title: "humidity",
+    //   info: `${today.main.humidity}%`,
+    //   description: `${getHumidityDescription(today.main.humidity)}`,
+    // },
 
-    {
-      icon: 'precipitation',
-      title: 'precipitation',
-      info: `${Math.round(today.pop * 100)}%`,
-      description: `${getPrecipitationDescription(today.pop)} clouds at ${
-        today.clouds.all
-      }%.`,
-    },
+    // {
+    //   icon: "precipitation",
+    //   title: "precipitation",
+    //   info: `${Math.round(today.pop * 100)}%`,
+    //   description: `${getPrecipitationDescription(today.pop)} clouds at ${
+    //     today.clouds.all
+    //   }%.`,
+    // },
   ];
 }
