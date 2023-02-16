@@ -2,7 +2,7 @@ export default function Precipitation() {
   return (
     <svg
       aria-hidden="true"
-      width="15"
+      width="12"
       height="12"
       viewBox="0 0 68 98"
       fill="none"

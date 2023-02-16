@@ -1,7 +1,7 @@
-import { ForecastListElementProps } from '../types';
-import { getHourNoMinutes } from '../helpers';
+import { ForecastListElementProps } from "../types";
+import { getHourNoMinutes } from "../helpers";
 
-import Degree from './Degree';
+import Degree from "./Degree";
 
 interface ForecastIntervalProps {
   forecastIntervalData: ForecastListElementProps;
@@ -14,11 +14,11 @@ export default function ForecastInterval({
 }: ForecastIntervalProps) {
   return (
     <div
-      className="inline-block w-[50px] text-center flex-shrink-0"
+      className="inline-block w-[35px] text-center flex-shrink-0"
       key={index}
     >
-      <p className="text-xs text-neutral-500 dark:text-neutral-200">
-        {index <= 0 ? 'Now' : getHourNoMinutes(forecastIntervalData.dt)}
+      <p className="text-xxs font-extralight text-neutral-500 dark:text-neutral-200">
+        {index <= 0 ? "Now" : getHourNoMinutes(forecastIntervalData.dt)}
       </p>
       <p>
         <img
@@ -26,7 +26,7 @@ export default function ForecastInterval({
           src={`http://openweathermap.org/img/wn/${forecastIntervalData.weather[0].icon}@2x.png`}
         />
       </p>
-      <p className="text-sm font-medium pb-2">
+      <p className="text-sm font-normal pb-2">
         <Degree temp={Math.round(forecastIntervalData.main.temp)} />
       </p>
     </div>

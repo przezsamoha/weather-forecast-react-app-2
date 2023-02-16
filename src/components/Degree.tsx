@@ -6,7 +6,7 @@ export default function Degree({ temp }: DegreeProps) {
   return (
     <span>
       {temp}
-      <sup>o</sup>C
+      <sup>o</sup>
     </span>
   );
 }

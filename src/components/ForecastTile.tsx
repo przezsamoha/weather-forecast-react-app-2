@@ -1,18 +1,18 @@
-import FeelsIcon from './Icons/FeelsIcon';
-import HumidityIcon from './Icons/HumidityIcon';
-import PrecipitationIcon from './Icons/PrecipitationIcon';
-import PressureIcon from './Icons/PressureIcon';
-import VisibilityIcon from './Icons/VisibilityIcon';
-import WindIcon from './Icons/WindIcon';
+import FeelsIcon from "./Icons/FeelsIcon";
+import HumidityIcon from "./Icons/HumidityIcon";
+import PrecipitationIcon from "./Icons/PrecipitationIcon";
+import PressureIcon from "./Icons/PressureIcon";
+import VisibilityIcon from "./Icons/VisibilityIcon";
+import WindIcon from "./Icons/WindIcon";
 
 export interface ForecastTileProps {
   icon:
-    | 'wind'
-    | 'feels'
-    | 'humidity'
-    | 'pressure'
-    | 'visibility'
-    | 'precipitation';
+    | "wind"
+    | "feels"
+    | "humidity"
+    | "pressure"
+    | "visibility"
+    | "precipitation";
   title: string;
   info: string | JSX.Element;
   description: string | number;
@@ -36,15 +36,13 @@ export default function ForecastTile({
   const Icon = icons[icon];
 
   return (
-    <article className="dark:bg-neutral-700/25 w-[140px] h-[140px] flex flex-col items-start justify-between bg-neutral-100 rounded-md p-2">
-      <div className="flex space-x-2 dark:text-neutral-400 text-neutral-600 text-sm">
+    <article className="w-[120px] h-[120px] flex flex-col items-start justify-between bg-neutral-100 rounded-md p-2 dark:bg-neutral-700/25">
+      <div className="flex items-center font-extralight justify-center space-x-1 text-neutral-500 dark:text-neutral-400 ">
         <Icon />
-        <h4 className="text-xs font-medium uppercase ">{title}</h4>
+        <h4 className="text-xxs font-medium uppercase ">{title}</h4>
       </div>
-      <h3 className="text-2xl  dark:text-neutral-300 dark:font-medium">
-        {info}
-      </h3>
-      <p className="text-sm  dark:text-neutral-300">{description}</p>
+      <h3 className="text-lg dark:text-neutral-300 dark:font-medium">{info}</h3>
+      <p className="text-xs  dark:text-neutral-300">{description}</p>
     </article>
   );
 }

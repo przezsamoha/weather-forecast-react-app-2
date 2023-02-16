@@ -24,7 +24,7 @@ function App() {
     <div
       className={`${
         darkMode ? "dark" : "light"
-      } dark:bg-neutral-900 flex justify-center items-center h-screen w-full`}
+      } w-full h-screen flex justify-center items-center dark:bg-neutral-900`}
     >
       {forecast && <ReturnToSearch handleReset={handleReset} />}
       <ToggleDarkMode toggleDarkMode={toggleDarkMode} darkMode={darkMode} />

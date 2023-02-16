@@ -16,7 +16,7 @@ export default function SearchListOfCities({
           <li key={`${city.name}-${index}`}>
             <button
               type="button"
-              className="rounded-md p-1 pl-7 mt-2 text-base font-medium text-neutral-500 hover:text-neutral-900 focus:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100"
+              className="rounded-md p-1 pl-7 mt-2 text-sm font-medium text-neutral-500 hover:text-neutral-900 focus:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100"
               onClick={() => {
                 handleSelectedCity(city);
               }}
