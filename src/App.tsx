@@ -21,24 +21,26 @@ function App() {
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
-    <div
-      className={`${
-        darkMode ? "dark" : "light"
-      } w-full h-screen flex justify-center items-center dark:bg-neutral-900`}
-    >
-      {forecast && <ReturnToSearch handleReset={handleReset} />}
-      <ToggleDarkMode toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
-      {forecast ? (
-        <Forecast forecastData={forecast} />
-      ) : (
-        <Search
-          city={city}
-          listOfCities={listOfCities}
-          handleInputChange={handleInputChange}
-          handleSelectedCity={handleSelectedCity}
-          handleReset={handleReset}
-        />
-      )}
+    <div className="min-w-[320px]">
+      <div
+        className={`${
+          darkMode ? "dark" : "light"
+        } w-full h-screen flex justify-center items-center dark:bg-neutral-900`}
+      >
+        {forecast && <ReturnToSearch handleReset={handleReset} />}
+        <ToggleDarkMode toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+        {forecast ? (
+          <Forecast forecastData={forecast} />
+        ) : (
+          <Search
+            city={city}
+            listOfCities={listOfCities}
+            handleInputChange={handleInputChange}
+            handleSelectedCity={handleSelectedCity}
+            handleReset={handleReset}
+          />
+        )}
+      </div>
     </div>
   );
 }

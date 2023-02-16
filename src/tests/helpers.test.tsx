@@ -5,6 +5,8 @@ import {
   getPressureDescription,
   getVisibilityDesctiption,
   getWindDirection,
+  getTilesBlueprint,
+  getSubjectiveTemp,
 } from "../helpers";
 
 describe("getHourAndMinutes", () => {
@@ -180,5 +182,60 @@ describe("getWindDirection", () => {
     const expected = "NW";
 
     expect(getWindDirection(degree)).toMatch(expected);
+  });
+});
+
+describe("getSubjectiveTemp", () => {
+  it("should return 'Feels colder' if feelsLike is lower than temp", () => {
+    const feelsLike = 10;
+    const temp = 15;
+    const expected = "Feels colder";
+
+    expect(getSubjectiveTemp(feelsLike, temp)).toMatch(expected);
+  });
+
+  it("should return 'Feels warmer' if feelsLike is higher than temp", () => {
+    const feelsLike = 20;
+    const temp = 15;
+    const expected = "Feels warmer";
+
+    expect(getSubjectiveTemp(feelsLike, temp)).toMatch(expected);
+  });
+});
+
+describe("getTilesBlueprint", () => {
+  const todayMock = {
+    dt: 1676581200,
+    main: {
+      feels_like: 10,
+      humidity: 9.5,
+      pressure: 1045,
+      temp: 11.39,
+      temp_max: 11.39,
+      temp_min: 10.36,
+    },
+    weather: [
+      {
+        description: "overcast clouds",
+        icon: "04n",
+        main: "Clouds",
+      },
+    ],
+    wind: {
+      speed: 2.4,
+      gust: 11.35,
+      deg: 223,
+    },
+    clouds: {
+      all: 100,
+    },
+    pop: 0,
+    visibility: 10000,
+  };
+
+  it("should return an array of 6 objects with weather data", () => {
+    const expectedLength = 6;
+
+    expect(getTilesBlueprint(todayMock).length).toBe(expectedLength);
   });
 });

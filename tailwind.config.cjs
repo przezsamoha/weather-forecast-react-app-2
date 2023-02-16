@@ -10,6 +10,9 @@ module.exports = {
       fontWeight: {
         extrathin: "70",
       },
+      minWidth: {
+        "1/2": "50%",
+      },
     },
   },
   plugins: [],

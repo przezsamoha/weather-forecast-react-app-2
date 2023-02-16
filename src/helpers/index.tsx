@@ -107,6 +107,10 @@ export function getWindDirection(degree: number) {
   }
 }
 
+export function getSubjectiveTemp(feelsLike: number, temp: number) {
+  return feelsLike < temp ? "Feels colder." : "Feels warmer.";
+}
+
 export function getTilesBlueprint(
   today: ForecastListElementProps
 ): ForecastTileProps[] {
@@ -115,11 +119,7 @@ export function getTilesBlueprint(
       icon: "feels",
       title: "feels like",
       info: <Degree temp={Math.floor(today.main.feels_like)} />,
-      description: `${
-        today.main.feels_like < today.main.temp
-          ? "Feels colder."
-          : "Feels warmer."
-      }`,
+      description: getSubjectiveTemp(today.main.feels_like, today.main.temp),
     },
     {
       icon: "wind",

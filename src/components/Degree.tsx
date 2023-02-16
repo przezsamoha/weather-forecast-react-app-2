@@ -4,7 +4,7 @@ export interface DegreeProps {
 
 export default function Degree({ temp }: DegreeProps) {
   return (
-    <span>
+    <span data-testid="degree">
       {temp}
       <sup>o</sup>
     </span>

@@ -17,6 +17,12 @@ export interface DegreeProps {
   temp: number;
 }
 
+interface WeatherProps {
+  description: string;
+  icon: string;
+  main: string;
+}
+
 export interface ForecastListElementProps {
   dt: number;
   main: {
@@ -27,13 +33,7 @@ export interface ForecastListElementProps {
     temp_max: number;
     temp_min: number;
   };
-  weather: [
-    {
-      description: string;
-      icon: string;
-      main: string;
-    }
-  ];
+  weather: WeatherProps[];
   wind: {
     speed: number;
     gust: number;
@@ -54,5 +54,5 @@ export interface ForecastDataProps {
   sunrise: number;
   sunset: number;
 
-  list: Array<ForecastListElementProps>;
+  list: ForecastListElementProps[];
 }
