@@ -9,12 +9,15 @@ type ResetInputValueType = Omit<
 
 export default function ResetInputValue({ handleReset }: ResetInputValueType) {
   return (
-    <button
-      type="button"
-      className="absolute top-2 right-2 w-6 h-6 stroke-neutral-400"
-      onClick={handleReset}
-    >
-      <ResetIcon />
-    </button>
+    <div className="">
+      <button
+        type="reset"
+        title="Clear the query"
+        className="absolute right-0 top-0 w-6 h-6"
+        onClick={handleReset}
+      >
+        <ResetIcon />
+      </button>
+    </div>
   );
 }

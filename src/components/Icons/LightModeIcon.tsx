@@ -6,7 +6,7 @@ export default function LightModeIcon() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6 hover:fill-neutral-200"
+      className="w-6 h-6 hover:fill-neutral-300 text-neutral-300"
     >
       <path
         strokeLinecap="round"

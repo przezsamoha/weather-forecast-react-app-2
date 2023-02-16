@@ -1,4 +1,4 @@
-import ReturnIcon from './Icons/ReturnIcon';
+import ReturnIcon from "./Icons/ReturnIcon";
 
 interface ReturnToSearchProps {
   handleReset: () => void;
@@ -6,16 +6,14 @@ interface ReturnToSearchProps {
 
 export default function ReturnToSearch({ handleReset }: ReturnToSearchProps) {
   return (
-    <div className="object-left-top dark:text-neutral-100 ">
+    <div className="object-left-top">
       <button
         type="button"
+        aria-label="Return to search field"
         onClick={handleReset}
         className="button absolute m-5 top-0 left-0 flex space-x-2 align-center"
       >
         <ReturnIcon />
-        <span className="font-medium text-md text-neutral-600 dark:text-neutral-300 ">
-          back to search
-        </span>
       </button>
     </div>
   );

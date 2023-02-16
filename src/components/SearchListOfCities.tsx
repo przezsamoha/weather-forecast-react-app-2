@@ -1,8 +1,8 @@
-import { SearchProps, CityProps } from '../types';
+import { SearchProps, CityProps } from "../types";
 
 type SearchListOfCitiesType = Omit<
   SearchProps,
-  'city' | 'handleInputChange' | 'handleReset'
+  "city" | "handleInputChange" | "handleReset"
 >;
 
 export default function SearchListOfCities({
@@ -16,7 +16,7 @@ export default function SearchListOfCities({
           <li key={`${city.name}-${index}`}>
             <button
               type="button"
-              className="dark:text-neutral-200 dark:hover:font-semibold rounded-md p-2 pl-7 mt-2 space-y-1 font-normal text-neutral-900 hover:font-bold hover:text-neutral-800 focus:text-neutral-800"
+              className="rounded-md p-1 pl-7 mt-2 text-base font-medium text-neutral-500 hover:text-neutral-900 focus:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100"
               onClick={() => {
                 handleSelectedCity(city);
               }}

@@ -1,29 +1,50 @@
 import { SearchProps } from "../types";
 
 import SearchIcon from "./Icons/SearchIcon";
+import ResetIcon from "./Icons/ResetIcon";
 
-type SeachInputType = Omit<
-  SearchProps,
-  "listOfCities" | "handleSelectedCity" | "handleReset"
->;
+type SeachInputType = Omit<SearchProps, "listOfCities" | "handleSelectedCity">;
 
 export default function SearchInput({
   city,
   handleInputChange,
+  handleReset,
 }: SeachInputType) {
   return (
-    <div className="relative block">
-      <span className="absolute inset-y-0 ml-2 flex items-center pl-2  fill-neutral-400 dark:fill-neutral-400">
+    <form className="flex items-center ">
+      <label id="search-label" htmlFor="search-input" className="absolute pl-3">
         <SearchIcon />
-      </span>
+      </label>
+
       <input
-        className="dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:border-none dark:focus:ring-none w-full dark:placeholder:text-neutral-400 placeholder:text-neutral-400 text-md text-neutral-600  border border-neutral-300 hover:border-neutral-400 rounded-md py-2 pl-9 pr-20 focus:text-neutral-600 cursor-pointer"
+        id="search-input"
+        aria-labelledby="search-label"
+        className="w-full capitalize text-sm font-semibold outline-none placeholder:text-neutral-500 placeholder:normal-case placeholder:font-thin text-neutral-600 border border-none bg-neutral-200 hover:bg-neutral-200/70 rounded-md py-2 pl-9 pr-20 focus:text-neutral-600 dark:bg-neutral-700 dark:hover:bg-neutral-700/80 dark:text-neutral-300 dark:border-none dark:outline-none dark:placeholder:text-neutral-400 cursor-pointer"
         placeholder="Search for the city..."
         type="text"
         name="search"
         value={city}
         onChange={handleInputChange}
       />
-    </div>
+      {city ? (
+        <button
+          type="reset"
+          title="Clear the query"
+          className="absolute right-2"
+          onClick={handleReset}
+        >
+          <ResetIcon />
+        </button>
+      ) : (
+        <button
+          type="reset"
+          title="Clear the query"
+          className="absolute right-2 hidden"
+          onClick={handleReset}
+        >
+          <ResetIcon />
+        </button>
+      )}
+    </form>
   );
 }

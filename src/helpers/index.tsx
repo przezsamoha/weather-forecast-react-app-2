@@ -121,40 +121,40 @@ export function getTilesBlueprint(
           : "Feels warmer."
       }`,
     },
-    // {
-    //   icon: "wind",
-    //   title: "wind",
-    //   info: `${Math.round(today.wind.speed)} km/h ${getWindDirection(
-    //     today.wind.deg
-    //   )}`,
-    //   description: `Gust ${today.wind.gust.toFixed(1)} km/h.`,
-    // },
-    // {
-    //   icon: "visibility",
-    //   title: "visibility",
-    //   info: `${today.visibility / 1000} km`,
-    //   description: `${getVisibilityDesctiption(today.visibility)}`,
-    // },
-    // {
-    //   icon: "pressure",
-    //   title: "pressure",
-    //   info: `${today.main.pressure} hPa`,
-    //   description: `${getPressureDescription(today.main.pressure)}`,
-    // },
-    // {
-    //   icon: "humidity",
-    //   title: "humidity",
-    //   info: `${today.main.humidity}%`,
-    //   description: `${getHumidityDescription(today.main.humidity)}`,
-    // },
+    {
+      icon: "wind",
+      title: "wind",
+      info: `${Math.round(today.wind.speed)} km/h ${getWindDirection(
+        today.wind.deg
+      )}`,
+      description: `Gust ${today.wind.gust.toFixed(1)} km/h.`,
+    },
+    {
+      icon: "visibility",
+      title: "visibility",
+      info: `${today.visibility / 1000} km`,
+      description: `${getVisibilityDesctiption(today.visibility)}`,
+    },
+    {
+      icon: "pressure",
+      title: "pressure",
+      info: `${today.main.pressure} hPa`,
+      description: `${getPressureDescription(today.main.pressure)}`,
+    },
+    {
+      icon: "humidity",
+      title: "humidity",
+      info: `${today.main.humidity}%`,
+      description: `${getHumidityDescription(today.main.humidity)}`,
+    },
 
-    // {
-    //   icon: "precipitation",
-    //   title: "precipitation",
-    //   info: `${Math.round(today.pop * 100)}%`,
-    //   description: `${getPrecipitationDescription(today.pop)} clouds at ${
-    //     today.clouds.all
-    //   }%.`,
-    // },
+    {
+      icon: "precipitation",
+      title: "precipitation",
+      info: `${Math.round(today.pop * 100)}%`,
+      description: `${getPrecipitationDescription(today.pop)} clouds at ${
+        today.clouds.all
+      }%.`,
+    },
   ];
 }

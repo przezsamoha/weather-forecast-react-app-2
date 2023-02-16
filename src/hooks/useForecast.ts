@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
-import { CityProps, ForecastProps } from '../types/index';
+import { useState, useEffect } from "react";
+import { CityProps, ForecastDataProps } from "../types/index";
 
 function useForecast() {
-  const [city, setCity] = useState<string>('');
+  const [city, setCity] = useState<string>("");
   const [listOfCities, setlistOfCities] = useState<[]>([]);
   const [selectedCity, setSelectedCity] = useState<CityProps | null>(null);
-  const [forecast, setForecast] = useState<ForecastProps | null>(null);
+  const [forecast, setForecast] = useState<ForecastDataProps | null>(null);
 
-  const URL = 'http://api.openweathermap.org';
+  const URL = "http://api.openweathermap.org";
 
   function getListOfCities(data: string) {
     const limit = 6;
@@ -46,7 +46,7 @@ function useForecast() {
 
     setCity(value);
 
-    if (value !== '') {
+    if (value !== "") {
       getListOfCities(value);
     }
   }
@@ -64,7 +64,7 @@ function useForecast() {
   }, [selectedCity]);
 
   function handleReset() {
-    setCity('');
+    setCity("");
     setlistOfCities([]);
     setForecast(null);
     setSelectedCity(null);
