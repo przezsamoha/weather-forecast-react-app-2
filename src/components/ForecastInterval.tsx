@@ -14,7 +14,7 @@ export default function ForecastInterval({
 }: ForecastIntervalProps) {
   return (
     <div
-      className="inline-block w-[35px] text-center flex-shrink-0"
+      className="inline-block w-[40px] mb-2 text-center flex-shrink-0"
       key={index}
     >
       <p className="text-xxs font-extralight text-neutral-500 dark:text-neutral-200">
@@ -26,7 +26,7 @@ export default function ForecastInterval({
           src={`http://openweathermap.org/img/wn/${forecastIntervalData.weather[0].icon}@2x.png`}
         />
       </p>
-      <p className="text-sm font-normal pb-2">
+      <p className="text-xs font-medium pb-2">
         <Degree temp={Math.round(forecastIntervalData.main.temp)} />
       </p>
     </div>

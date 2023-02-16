@@ -7,6 +7,9 @@ module.exports = {
       fontSize: {
         xxs: "0.6rem",
       },
+      fontWeight: {
+        extrathin: "70",
+      },
     },
   },
   plugins: [],

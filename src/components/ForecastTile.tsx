@@ -41,7 +41,7 @@ export default function ForecastTile({
         <Icon />
         <h4 className="text-xxs font-medium uppercase ">{title}</h4>
       </div>
-      <h3 className="text-lg dark:text-neutral-300 dark:font-medium">{info}</h3>
+      <h3 className="text-lg font-medium dark:text-neutral-200">{info}</h3>
       <p className="text-xs  dark:text-neutral-300">{description}</p>
     </article>
   );
