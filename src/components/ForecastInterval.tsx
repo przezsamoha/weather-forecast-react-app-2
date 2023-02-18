@@ -1,5 +1,5 @@
 import { ForecastListElementProps } from "../types";
-import { getHourNoMinutes } from "../helpers";
+import { formatTimestampToGetHours } from "../helpers";
 
 import Degree from "./Degree";
 
@@ -18,7 +18,9 @@ export default function ForecastInterval({
       key={index}
     >
       <p className="text-xxs font-extralight text-neutral-500 dark:text-neutral-200">
-        {index <= 0 ? "Now" : getHourNoMinutes(forecastIntervalData.dt)}
+        {index <= 0
+          ? "Now"
+          : formatTimestampToGetHours(forecastIntervalData.dt)}
       </p>
       <p>
         <img

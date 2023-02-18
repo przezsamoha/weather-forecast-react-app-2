@@ -2,7 +2,7 @@ import { ForecastListElementProps } from "../types";
 import { ForecastTileProps } from "../components/ForecastTile";
 import Degree from "../components/Degree";
 
-export function getHourAndMinutes(timestamp: number) {
+export function formatTimestampToGetHoursAndMinutes(timestamp: number) {
   const date = new Date(timestamp * 1000);
   let hours = date.getHours().toString();
   let minutes = date.getMinutes().toString();
@@ -13,7 +13,7 @@ export function getHourAndMinutes(timestamp: number) {
   return `${hours}:${minutes}`;
 }
 
-export function getHourNoMinutes(timestamp: number) {
+export function formatTimestampToGetHours(timestamp: number) {
   const date = new Date(timestamp * 1000);
   let hours = date.getHours().toString();
 

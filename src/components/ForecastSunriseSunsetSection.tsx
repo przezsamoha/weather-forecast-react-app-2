@@ -1,7 +1,7 @@
 import SunriseIcon from "./Icons/SunriseIcon";
 import SunsetIcon from "./Icons/SunsetIcon";
 import { ForecastDataProps } from "../types";
-import { getHourAndMinutes } from "../helpers";
+import { formatTimestampToGetHoursAndMinutes } from "../helpers";
 
 interface ForecastSunriseSunsetSectionProps {
   forecastData: ForecastDataProps;
@@ -16,13 +16,13 @@ export default function ForecastSunriseSunsetSection({
         <p className="grid place-items-center dark:text-neutral-400">
           <SunriseIcon />
         </p>
-        <div>{getHourAndMinutes(forecastData.sunrise)}</div>
+        <div>{formatTimestampToGetHoursAndMinutes(forecastData.sunrise)}</div>
       </div>
       <div className="text-xs font-medium text-neutral-500 space-y-1 dark:text-neutral-300">
         <p className="grid place-items-center dark:text-neutral-400">
           <SunsetIcon />
         </p>
-        <div>{getHourAndMinutes(forecastData.sunset)}</div>
+        <div>{formatTimestampToGetHoursAndMinutes(forecastData.sunset)}</div>
       </div>
     </div>
   );

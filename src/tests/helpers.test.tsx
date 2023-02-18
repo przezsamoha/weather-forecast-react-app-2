@@ -1,5 +1,6 @@
 import {
-  getHourAndMinutes,
+  formatTimestampToGetHoursAndMinutes,
+  formatTimestampToGetHours,
   getHumidityDescription,
   getPrecipitationDescription,
   getPressureDescription,
@@ -9,18 +10,27 @@ import {
   getSubjectiveTemp,
 } from "../helpers";
 
-describe("getHourAndMinutes", () => {
+describe("formatTimestampToGetHoursAndMinutes", () => {
   it("should return '07:00' time", () => {
     const timestamp = 1676440800;
-    const expected = "07:0";
+    const expected = "07:00";
 
-    expect(getHourAndMinutes(timestamp)).toMatch(expected);
+    expect(formatTimestampToGetHoursAndMinutes(timestamp)).toMatch(expected);
   });
   it("should return '17:00' time", () => {
     const timestamp = 1676476800;
     const expected = "17:00";
 
-    expect(getHourAndMinutes(timestamp)).toMatch(expected);
+    expect(formatTimestampToGetHoursAndMinutes(timestamp)).toMatch(expected);
+  });
+});
+
+describe("formatTimestampToGetHours", () => {
+  it("should return '07' time", () => {
+    const timestamp = 1676440800;
+    const expected = "07";
+
+    expect(formatTimestampToGetHours(timestamp)).toMatch(expected);
   });
 });
 
