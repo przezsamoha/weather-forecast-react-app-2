@@ -12,20 +12,20 @@ By default it runs in a light mode but enables user to toggle the theme to dark 
 
 This project was built with [Vite](https://vitejs.dev/).
 
-##### Core technologies
+#### Core technologies
 
 - Vite
 - ReactJs
 - TypeScript
 - Tailwind CSS
 
-##### Weather Forecast API
+#### Weather Forecast API
 
 > This project features data from [Open Weather](https://openweathermap.org/)'s free plan pricing:
-> [Geocoding API](https://openweathermap.org/api/geocoding-api)
-> [Weather Forecast API](https://openweathermap.org/forecast5)
+> [Geocoding API](https://openweathermap.org/api/geocoding-api) and
+> [Weather Forecast API](https://openweathermap.org/forecast5).
 
-##### API key
+#### API key
 
 Open Weather API requires an **API key**.
 To get one you will have to [create a free account](https://home.openweathermap.org/users/sign_up) on the OpenWeather website.
