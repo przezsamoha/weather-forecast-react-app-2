@@ -2,11 +2,9 @@
 
 ###### ReactJs | Typescript | Vite | TailwindCSS App
 
-#
+This application lets you check the weather forecast for the location of your choice.
 
-This application lets you search for a weather forecast at the location of your choice.
-
-It displays a list of suggested cities (based on user's input, typed in a search form) and provides 3 hours forecast for a period of 5 days and current weather characteristics for the chosen city, such as: temperature, min and max temp, cloud cover, sunrise/sunset, feels like, wind, visibility, pressure, humidity and precipitation.
+It displays a list of suggested cities (based on your input typed in a search form) and as one of them is clicked, application provides a 3 hours forecast and current weather characteristics, such as: temperature, min and max temp, cloud cover, sunrise/sunset, feels like, wind, visibility, pressure, humidity and precipitation.
 
 By default it runs in a light mode but enables user to toggle the theme to dark mode.
 
@@ -23,12 +21,9 @@ This project was built with [Vite](https://vitejs.dev/).
 
 ##### Weather Forecast API
 
-#
-
-#
-
 > This project features data from [Open Weather](https://openweathermap.org/)'s free plan pricing:
-> [Geocoding API](https://openweathermap.org/api/geocoding-api) >[Weather Forecast API](https://openweathermap.org/forecast5)
+> [Geocoding API](https://openweathermap.org/api/geocoding-api)
+> [Weather Forecast API](https://openweathermap.org/forecast5)
 
 ##### API key
 
@@ -59,38 +54,28 @@ To view it in your browser, open http://localhost:3000.
 
 ### Scripts
 
-This project requires adding the following scripts to your projec:
-
-`eslint`
+`build`
 
 ```
-with npm:
-npm i eslint
+npm run build
 ```
 
-```
-with yarn:
-$ yarn add eslint
-```
-
-`Vitest`
+`lint`
 
 ```
-with npm:
-npm install -D vitest
+npm run lint
 ```
 
-```
-with yarn:
-$ yarn add -D vitest
-```
-
-## Testing
-
-To run tests run:
+`test`
 
 ```
 npm run test
+```
+
+`test with coverage`
+
+```
+npm run test:coverage
 ```
 
 ## Licence
