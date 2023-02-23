@@ -12,7 +12,7 @@ export default function Footer({ darkMode }: FooterProps) {
         darkMode ? "dark" : "light"
       } sticky inset-x-0 bottom-5 space-x-2 flex justify-center items-center `}
     >
-      <h1 className="font-medium text-sm text-neutral-800 dark:text-neutral-200">
+      <h1 className="font-medium text-xs text-neutral-800 dark:text-neutral-200">
         © 2023 przezsamoha
       </h1>
       <div className="cursor-pointer flex items-center">

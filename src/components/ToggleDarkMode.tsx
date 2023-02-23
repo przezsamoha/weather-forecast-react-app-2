@@ -16,7 +16,7 @@ export default function ToggleDarkMode({
         type="button"
         aria-label="Toggle Dark Mode"
         onClick={toggleDarkMode}
-        className="button absolute m-5 top-0 right-0"
+        className="absolute m-5 top-0 right-0"
       >
         {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
       </button>
