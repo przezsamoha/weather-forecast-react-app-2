@@ -5,9 +5,9 @@ import Search from "./components/Search";
 import Forecast from "./components/Forecast";
 import ToggleDarkMode from "./components/ToggleDarkMode";
 import ReturnToSearch from "./components/ReturnToSearch";
-import GitHubIcon from "./components/Icons/GitHubIcon";
+import Footer from "./components/Footer";
 
-function App() {
+export default function App() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
 
   const {
@@ -42,9 +42,7 @@ function App() {
           />
         )}
       </div>
-      <GitHubIcon />
+      <Footer darkMode={darkMode} />
     </div>
   );
 }
-
-export default App;
