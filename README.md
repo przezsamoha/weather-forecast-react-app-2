@@ -8,6 +8,10 @@ It displays a list of suggested cities (based on your input typed in a search fo
 
 By default it runs in a light mode but enables user to toggle the theme to dark mode.
 
+## Preview
+
+![weather-forecast-preview](https://user-images.githubusercontent.com/99020665/220878908-b4f91f3a-104e-4e9f-a70a-f99e3bb8c4a2.png)
+
 ## Tech
 
 This project was built with [Vite](https://vitejs.dev/).
