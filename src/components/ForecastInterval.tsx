@@ -14,7 +14,7 @@ export default function ForecastInterval({
 }: ForecastIntervalProps) {
   return (
     <div
-      className="inline-block w-[43px] mb-2 text-center flex-shrink-0"
+      className="inline-block w-[43px] mb-2 text-center flex-shrink-0 overscroll-contain"
       key={index}
     >
       <p className="text-xxs font-extralight text-neutral-500 dark:text-neutral-200">

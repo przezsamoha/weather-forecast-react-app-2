@@ -7,7 +7,7 @@ import ToggleDarkMode from "./components/ToggleDarkMode";
 import ReturnToSearch from "./components/ReturnToSearch";
 import Footer from "./components/Footer";
 
-export default function App() {
+function App() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
 
   const {
@@ -22,7 +22,7 @@ export default function App() {
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
-    <div className="min-w-[320px]">
+    <div className="min-w-[320px] m-0">
       <div
         className={`${
           darkMode ? "dark" : "light"
@@ -46,3 +46,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;
