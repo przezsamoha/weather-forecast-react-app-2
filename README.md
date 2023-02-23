@@ -10,6 +10,8 @@ By default it runs in a light mode but enables user to toggle the theme to dark 
 
 ## Preview
 
+🔗 [Live demo](https://develop--weather-forecast-react-vite-app.netlify.app/)
+
 ![weather-forecast-preview](https://user-images.githubusercontent.com/99020665/220878908-b4f91f3a-104e-4e9f-a70a-f99e3bb8c4a2.png)
 
 ## Tech
