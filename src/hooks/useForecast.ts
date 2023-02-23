@@ -7,7 +7,7 @@ function useForecast() {
   const [selectedCity, setSelectedCity] = useState<CityProps | null>(null);
   const [forecast, setForecast] = useState<ForecastDataProps | null>(null);
 
-  const URL = "http://api.openweathermap.org";
+  const URL = "https://api.openweathermap.org";
 
   function getListOfCities(data: string) {
     const limit = 6;
