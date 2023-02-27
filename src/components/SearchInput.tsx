@@ -11,8 +11,12 @@ export default function SearchInput({
   handleReset,
 }: SeachInputType) {
   return (
-    <form className="flex items-center w-[250px]">
-      <label id="search-label" htmlFor="search-input" className="absolute pl-3">
+    <form className="relative flex items-center justify-center w-[250px]">
+      <label
+        id="search-label"
+        htmlFor="search-input"
+        className="absolute left-2"
+      >
         <SearchIcon />
       </label>
 

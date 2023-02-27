@@ -10,7 +10,7 @@ export default function SearchListOfCities({
   handleSelectedCity,
 }: SearchListOfCitiesType) {
   return (
-    <div className="absolute mt-10 text-left">
+    <div className="fixed mt-10 text-left">
       <ul>
         {listOfCities.map((city: CityProps, index: number) => (
           <li key={`${city.name}-${index}`}>
