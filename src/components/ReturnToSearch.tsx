@@ -6,12 +6,12 @@ interface ReturnToSearchProps {
 
 export default function ReturnToSearch({ handleReset }: ReturnToSearchProps) {
   return (
-    <div className="object-left-top">
+    <div className=" object-left-top">
       <button
         type="button"
         aria-label="Return to search field"
         onClick={handleReset}
-        className="button absolute m-5 top-0 left-0 flex space-x-2 align-center"
+        className="button fixed m-5 top-0 left-0 flex space-x-2 align-center"
       >
         <ReturnIcon />
       </button>

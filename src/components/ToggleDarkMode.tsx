@@ -11,12 +11,12 @@ export default function ToggleDarkMode({
   darkMode,
 }: ToggleDarkModeProps) {
   return (
-    <div className="object-right-top">
+    <div>
       <button
         type="button"
         aria-label="Toggle Dark Mode"
         onClick={toggleDarkMode}
-        className="absolute m-5 top-0 right-0"
+        className="fixed m-5 top-0 right-0"
       >
         {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
       </button>
