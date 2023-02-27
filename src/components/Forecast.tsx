@@ -11,8 +11,8 @@ export interface ForecastProps {
 
 export default function Forecast({ forecastData }: ForecastProps) {
   return (
-    <div className="w-full h-screen m-auto md:w-full flex justify-center items-center dark:bg-neutral-800">
-      <div className="w-[260px]">
+    <div className="w-full h-screen flex justify-center items-center dark:bg-neutral-800">
+      <div className="w-[260px] mb-5">
         <ForecastHeader forecastData={forecastData} />
         <ForecastIntervalsSection forecastData={forecastData} />
         <ForecastSunriseSunsetSection forecastData={forecastData} />
