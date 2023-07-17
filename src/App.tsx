@@ -12,6 +12,8 @@ function App() {
 
   const {
     city,
+    lat,
+    lon,
     listOfCities,
     forecast,
     handleInputChange,
@@ -31,7 +33,7 @@ function App() {
         {forecast && <ReturnToSearch handleReset={handleReset} />}
         <ToggleDarkMode toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
         {forecast ? (
-          <Forecast forecastData={forecast} />
+          <Forecast forecastData={forecast} lat={lat} lon={lon} />
         ) : (
           <Search
             city={city}

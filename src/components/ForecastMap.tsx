@@ -1,25 +1,18 @@
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 
-// import { CityProps } from "../types";
+interface ForecastMapProps {
+  lat: number;
+  lon: number;
+}
 
-// interface ForecastMapProps {
-//   lon: CityProps;
-//   lat: CityProps;
-// }
-
-export default function ForecastMap() {
-  const marker = {
-    geocode: [52.2319581, 21.0067249],
-    popUp: "city name",
-  };
-
+export default function ForecastMap({ lat, lon }: ForecastMapProps) {
   return (
-    <MapContainer className="h-44" center={[52.2319581, 21.0067249]} zoom={13}>
+    <MapContainer className="h-44" center={[lat, lon]} zoom={13}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={marker.geocode}></Marker>
+      <Marker position={[lat, lon]}></Marker>
     </MapContainer>
   );
 }

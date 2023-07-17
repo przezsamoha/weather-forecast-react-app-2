@@ -6,6 +6,8 @@ function useForecast() {
   const [listOfCities, setlistOfCities] = useState<[]>([]);
   const [selectedCity, setSelectedCity] = useState<CityProps | null>(null);
   const [forecast, setForecast] = useState<ForecastDataProps | null>(null);
+  const [lat, setLat] = useState<number>();
+  const [lon, setLon] = useState<number>();
 
   const URL = "https://api.openweathermap.org";
 
@@ -43,7 +45,6 @@ function useForecast() {
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     const value = e.target.value;
-
     setCity(value);
 
     if (value !== "") {
@@ -60,6 +61,8 @@ function useForecast() {
     if (selectedCity) {
       setCity(selectedCity.name);
       setlistOfCities([]);
+      setLat(selectedCity.lat);
+      setLon(selectedCity.lon);
     }
   }, [selectedCity]);
 
@@ -72,6 +75,8 @@ function useForecast() {
 
   return {
     city,
+    lat,
+    lon,
     listOfCities,
     forecast,
     handleInputChange,

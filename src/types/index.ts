@@ -9,8 +9,8 @@ export interface SearchProps {
 export interface CityProps {
   name: string;
   country: string;
-  lon: number;
   lat: number;
+  lon: number;
 }
 
 export interface DegreeProps {
