@@ -33,7 +33,12 @@ function App() {
         {forecast && <ReturnToSearch handleReset={handleReset} />}
         <ToggleDarkMode toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
         {forecast ? (
-          <Forecast forecastData={forecast} lat={lat} lon={lon} />
+          <Forecast
+            darkMode={darkMode}
+            forecastData={forecast}
+            lat={lat}
+            lon={lon}
+          />
         ) : (
           <Search
             city={city}
