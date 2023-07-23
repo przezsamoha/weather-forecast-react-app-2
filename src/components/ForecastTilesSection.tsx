@@ -13,7 +13,7 @@ export default function ForecastTilesSection({
   const today = forecastData.list[0];
 
   return (
-    <section className="grid grid-cols-2 gap-3 mt-3  items-center justify-items-center overflow-scroll max-h-[260px]">
+    <section className="grid grid-cols-3 gap-2 mt-3 mb-5 items-center justify-items-center overflow-scroll max-h-[260px]">
       {getTilesBlueprint(today).map((tile, index) => {
         return (
           <ForecastTile

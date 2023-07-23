@@ -5,6 +5,7 @@ import ForecastIntervalsSection from "./ForecastIntervalSection";
 import ForecastSunriseSunsetSection from "./ForecastSunriseSunsetSection";
 import ForecastTilesSection from "./ForecastTilesSection";
 import ForecastMap from "./ForecastMap";
+import Footer from "./Footer";
 
 export interface ForecastProps {
   forecastData: ForecastDataProps;
@@ -21,12 +22,13 @@ export default function Forecast({
 }: ForecastProps) {
   return (
     <div className="w-full h-screen flex justify-center items-center dark:bg-neutral-800">
-      <div className="w-[260px] mb-5">
+      <div className="w-[320px]">
         <ForecastHeader forecastData={forecastData} />
         {lat && lon && <ForecastMap darkMode={darkMode} lat={lat} lon={lon} />}
         <ForecastIntervalsSection forecastData={forecastData} />
         <ForecastSunriseSunsetSection forecastData={forecastData} />
         <ForecastTilesSection forecastData={forecastData} />
+        <Footer darkMode={darkMode} />
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import Search from "./components/Search";
 import Forecast from "./components/Forecast";
 import ToggleDarkMode from "./components/ToggleDarkMode";
 import ReturnToSearch from "./components/ReturnToSearch";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -24,12 +24,8 @@ function App() {
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
-    <div className="relative w-full h-screen min-w-[320px] min-h-[350px] dark:bg-neutral-900">
-      <div
-        className={`${
-          darkMode ? "dark" : "light"
-        } flex justify-center items-center`}
-      >
+    <div className="relative w-full h-screen min-w-[350px] dark:bg-neutral-900">
+      <div className={`${darkMode ? "dark" : "light"}`}>
         {forecast && <ReturnToSearch handleReset={handleReset} />}
         <ToggleDarkMode toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
         {forecast ? (
@@ -48,8 +44,8 @@ function App() {
             handleReset={handleReset}
           />
         )}
+        {/* <Footer darkMode={darkMode} /> */}
       </div>
-      <Footer darkMode={darkMode} />
     </div>
   );
 }

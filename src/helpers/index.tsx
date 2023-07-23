@@ -130,16 +130,16 @@ export function getTilesBlueprint(
       description: `Gust ${today.wind.gust.toFixed(1)} km/h.`,
     },
     {
-      icon: "visibility",
-      title: "visibility",
-      info: `${today.visibility / 1000} km`,
-      description: `${getVisibilityDesctiption(today.visibility)}`,
-    },
-    {
       icon: "pressure",
       title: "pressure",
       info: `${today.main.pressure} hPa`,
       description: `${getPressureDescription(today.main.pressure)}`,
+    },
+    {
+      icon: "visibility",
+      title: "visibility",
+      info: `${today.visibility / 1000} km`,
+      description: `${getVisibilityDesctiption(today.visibility)}`,
     },
     {
       icon: "humidity",
