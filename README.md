@@ -12,7 +12,7 @@ By default it runs in a light mode but enables user to toggle the theme to dark 
 
 🔗 [Live demo](https://przezsamoha-weather-forecast.netlify.app/)
 
-![weather-forecast-preview](https://user-images.githubusercontent.com/99020665/221035611-89b3b32a-5456-413d-9643-e266d8721d99.png)
+![weather-forecast-preview](https://user-images.githubusercontent.com/99020665/258645894-25d3a14d-1b40-4750-9d48-cf57922107e3.png)
 
 ## Tech
 
