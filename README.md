@@ -1,10 +1,10 @@
 # Weather Forecast
 
-###### ReactJs | Typescript | Vite | TailwindCSS App
+###### ReactJs | Typescript | Vite | TailwindCSS | Leaflet App
 
-This application lets you check the weather forecast for the location of your choice.
+An upgraded version of a weather application that lets you check the weather forecast for the location of your choice that now includes an interactive map.
 
-It displays a list of suggested cities (based on your input typed in a search form) and as one of them is clicked, application provides a 3 hours forecast and current weather characteristics, such as: temperature, min and max temp, cloud cover, sunrise/sunset, feels like, wind, visibility, pressure, humidity and precipitation.
+It displays a list of suggested cities (based on your input typed in a search form) and as one of them is clicked, application provides a 3 hours forecast and current weather characteristics, such as: temperature, min and max temp, cloud cover, sunrise/sunset, feels like, wind, visibility, pressure, humidity and precipitation, as well as a map of a chosen location.
 
 By default it runs in a light mode but enables user to toggle the theme to dark mode.
 
@@ -24,6 +24,7 @@ This project was built with [Vite](https://vitejs.dev/).
 - ReactJs
 - TypeScript
 - Tailwind CSS
+- Leaflet
 
 #### Weather Forecast API
 
