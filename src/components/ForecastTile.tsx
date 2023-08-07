@@ -36,13 +36,13 @@ export default function ForecastTile({
   const Icon = icons[icon];
 
   return (
-    <article className="w-[100px] h-[100px] flex flex-col items-start justify-between bg-neutral-100 rounded-md p-2 dark:bg-neutral-700/25">
-      <div className="flex items-center font-extralight justify-center space-x-1 text-neutral-500 dark:text-neutral-400 ">
+    <article className="w-[95px] h-[95px] flex flex-col items-start justify-between bg-neutral-100 rounded-md p-2 dark:bg-neutral-500/25 dark:text-neutral-300">
+      <div className="flex items-center font-extralight justify-center space-x-1 text-neutral-500 dark:text-neutral-300/90">
         <Icon />
-        <h4 className="text-xxs font-medium uppercase ">{title}</h4>
+        <h4 className="text-xxxs font-medium uppercase">{title}</h4>
       </div>
-      <h3 className="text-lg font-medium dark:text-neutral-200">{info}</h3>
-      <p className="text-xs  dark:text-neutral-300">{description}</p>
+      <h3 className="text-md font-medium">{info}</h3>
+      <p className="text-xxs">{description}</p>
     </article>
   );
 }

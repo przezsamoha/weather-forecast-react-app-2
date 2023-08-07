@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       fontSize: {
         xxs: "0.6rem",
+        xxxs: "0.5rem",
       },
       fontWeight: {
         extrathin: "70",

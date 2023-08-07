@@ -10,7 +10,7 @@ export default function Footer({ darkMode }: FooterProps) {
     <div
       className={`${
         darkMode ? "dark" : "light"
-      } inset-x-0 space-x-2 flex justify-center items-center dark:bg-neutral-800`}
+      } inset-x-0 space-x-2 mb-3 relative flex flex-grow justify-center items-center`}
     >
       <h1 className="font-medium text-xs text-neutral-800 dark:text-neutral-200">
         © 2023 przezsamoha

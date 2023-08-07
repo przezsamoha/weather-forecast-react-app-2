@@ -19,10 +19,10 @@ export default function ForecastMap({ lat, lon, darkMode }: ForecastMapProps) {
   });
 
   return (
-    <MapContainer className="h-44 mt-5" center={[lat, lon]} zoom={13}>
+    <MapContainer className="h-44 mt-3" center={[lat, lon]} zoom={13}>
       <div>
         <TileLayer
-          className="text-sm"
+          className="text-xs dark:border-none"
           attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
           url={`${URL}/${darkMode ? darkModeParam : lightModeParam}`}
         />

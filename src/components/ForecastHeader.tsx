@@ -10,7 +10,7 @@ export default function ForecastHeader({ forecastData }: ForecastHeaderProps) {
   const today = forecastData.list[0];
 
   return (
-    <section className="text-center">
+    <section className="mt-10 text-center">
       <h2 className="text-xl font-medium text-neutral-900  dark:text-neutral-200">
         {forecastData.name}
         <span className="font-thin dark:font-extrathin">

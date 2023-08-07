@@ -11,14 +11,14 @@ export default function ForecastSunriseSunsetSection({
   forecastData,
 }: ForecastSunriseSunsetSectionProps) {
   return (
-    <div className="grid grid-cols-2 pt-3 items-center justify-items-center">
-      <div className="text-xs font-medium text-neutral-500 space-y-1 dark:text-neutral-300">
+    <div className="grid grid-cols-2 pt-2 items-center justify-items-center">
+      <div className="text-xxs font-medium text-neutral-500 space-y-1 dark:text-neutral-300">
         <p className="grid place-items-center dark:text-neutral-400">
           <SunriseIcon />
         </p>
         <div>{formatTimestampToGetHoursAndMinutes(forecastData.sunrise)}</div>
       </div>
-      <div className="text-xs font-medium text-neutral-500 space-y-1 dark:text-neutral-300">
+      <div className="text-xxs font-medium text-neutral-500 space-y-1 dark:text-neutral-300">
         <p className="grid place-items-center dark:text-neutral-400">
           <SunsetIcon />
         </p>

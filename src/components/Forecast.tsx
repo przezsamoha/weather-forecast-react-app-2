@@ -21,8 +21,8 @@ export default function Forecast({
   darkMode,
 }: ForecastProps) {
   return (
-    <div className="w-full h-screen flex justify-center items-center dark:bg-neutral-800">
-      <div className="w-[320px]">
+    <div className="h-full flex flex-col justify-center items-center dark:bg-neutral-800">
+      <div className="w-[300px]">
         <ForecastHeader forecastData={forecastData} />
         {lat && lon && <ForecastMap darkMode={darkMode} lat={lat} lon={lon} />}
         <ForecastIntervalsSection forecastData={forecastData} />
